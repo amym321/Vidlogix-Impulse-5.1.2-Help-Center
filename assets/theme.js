@@ -1949,9 +1949,20 @@ lazySizesConfig.expFactor = 4;
     return CartForm;
   })();
   
+
+  // includes Help Center page - am
+
   // Either collapsible containers all acting individually,
   // or tabs that can only have one open at a time
+  window.counter = 0;
+  window.flag = false;
+  if (window.location.href.includes("help-center")) {
+    window.flag = true;
+  }
+
   theme.collapsibles = (function() {
+    window.subHeight = 0;
+
     var selectors = {
       trigger: '.collapsible-trigger',
       module: '.collapsible-content',
@@ -1963,7 +1974,8 @@ lazySizesConfig.expFactor = 4;
       hide: 'hide',
       open: 'is-open',
       autoHeight: 'collapsible--auto-height',
-      tabs: 'collapsible-trigger--tab'
+      tabs: 'collapsible-trigger--tab',
+      mainTitle: 'main-title'
     };
   
     var namespace = '.collapsible';
@@ -1971,7 +1983,9 @@ lazySizesConfig.expFactor = 4;
     var isTransitioning = false;
   
     function init(scope) {
+
       var el = scope ? scope : document;
+
       el.querySelectorAll(selectors.trigger).forEach(trigger => {
         var state = trigger.classList.contains(classes.open);
         trigger.setAttribute('aria-expanded', state);
@@ -1979,21 +1993,89 @@ lazySizesConfig.expFactor = 4;
         trigger.off('click' + namespace);
         trigger.on('click' + namespace, toggle);
       });
+
+      // open Help Center block 1st time if linked from other page, ie. not triggered by click on Help Center page- am
+      // links to Help Center with no block should be https://vidlogix.com/pages/help-center?main_block=FAQ-content-left-faq-2
+      if (window.location.href.includes("help-center") && window.flag == true) {
+        var queryStringUrl = window.location.search;
+
+        if (queryStringUrl != "") {
+          var urlParams = new URLSearchParams(queryStringUrl);
+
+          var mainBlock = urlParams.get('main_block');
+          var subBlock = urlParams.get('sub_block');
+
+          //use 1st trigger element to open left & right sides, so takes only 1st element with querySelector
+          var elem = document.querySelector('[aria-controls="' + mainBlock + '"]');
+          var elemMobile = document.querySelector('[aria-controls-mobile="' + mainBlock + '-mobile"]');
+          var subElem = document.querySelector('[aria-controls="' + subBlock + '"]');
+
+          if (subElem != null) {
+            window.counter = window.counter + 1;
+            toggle(subElem);
+          }
+          if (elemMobile != null) {
+            window.counter = window.counter + 1;
+            toggle(elemMobile);
+          }
+          if (elem != null) {
+            window.counter = window.counter + 1;
+            toggle(elem);
+            newTitle(elem);
+          }
+          window.flag = false;  // turn off flag when done
+          window.subHeight = 0; // reset height when done
+        } else {
+          var elem = document.querySelector('[aria-controls]');
+          console.log('log 170) elem = '+ elem);
+          if (elem != null) {
+            window.counter = window.counter + 1;
+            toggle(elem);
+            newTitle(elem);
+            window.flag = false;  // turn off flag when done
+            window.subHeight = 0; // reset height when done
+          }
+        }
+
+      }
     }
-  
+
+    function newTitle(elem) {
+      var mainBlock = elem.classList.contains('main-block');
+      if (mainBlock) {
+        var newTitle = elem.querySelector('.main-title').innerHTML;
+        if (newTitle != null) {
+          var titleEl = document.getElementById("hero-text");
+          titleEl.innerHTML = newTitle;
+        }
+      }
+    }
+
     function toggle(evt) {
       if (isTransitioning) {
         return;
       }
   
       isTransitioning = true;
-  
-      var el = evt.currentTarget;
+
+      if (window.flag) {
+        var el = evt;
+      } else {
+        var el = evt.currentTarget;
+      }
+
       var isOpen = el.classList.contains(classes.open);
       var isTab = el.classList.contains(classes.tabs);
       var moduleId = el.getAttribute('aria-controls');
+      var moduleIdRight = el.getAttribute('aria-controls-right');
+      var moduleIdMobile = el.getAttribute('aria-controls-mobile');
       var container = document.getElementById(moduleId);
-  
+      var containerRight = document.getElementById(moduleIdRight);
+      var containerMobile = document.getElementById(moduleIdMobile);
+
+      // all elements matching trigger including trigger
+      var elArias = document.querySelectorAll('[aria-controls="' + moduleId + '"]');
+
       if (!moduleId) {
         moduleId = el.dataset.controls;
       }
@@ -2022,7 +2104,27 @@ lazySizesConfig.expFactor = 4;
       var isAutoHeight = container.classList.contains(classes.autoHeight);
       var parentCollapsibleEl = container.parentNode.closest(selectors.module);
       var childHeight = height;
+      if (window.flag === true && window.subHeight === 0) {
+        window.subHeight = height;  // store the subcontainer height to be used on the right container, page load only
+      }
+
+      // on Help Center page - am
+      if (containerRight) {
+        var heightRight = containerRight.querySelector(selectors.moduleInner).offsetHeight;
+        var isAutoHeightRight = containerRight.classList.contains(classes.autoHeight);
+        if (window.flag === true && window.subHeight !== 0) {
+          var heightRight = heightRight + window.subHeight;  //increase right container by the subcontainer height, page load only
+        }
+      }
   
+      // on Help Center page - am
+      if (containerMobile) {
+        var heightMobile = 'auto';
+        var isAutoHeightMobile = false;
+        var activeMobileTitle = containerMobile.previousElementSibling.firstElementChild;
+      }
+
+
       if (isTab) {
         if(isOpen) {
           isTransitioning = false;
@@ -2045,19 +2147,68 @@ lazySizesConfig.expFactor = 4;
           setTransitionHeight(container, height, isOpen, isAutoHeight);
         }, 0);
       }
+
+      if (isOpen && isAutoHeightRight) {
+        setTimeout(function() {
+          heightRight = 0;
+          setTransitionHeight(containerRight, heightRight, isOpen, isAutoHeightRight);
+        }, 0);
+      }
   
       if (isOpen && !isAutoHeight) {
         height = 0;
       }
-  
-      el.setAttribute('aria-expanded', !isOpen);
-      if (isOpen) {
-        el.classList.remove(classes.open);
-      } else {
-        el.classList.add(classes.open);
+
+      if (isOpen && !isAutoHeightRight) {
+        heightRight = 0;
       }
   
+
+      // on Help Center page Open & change state for all matching elements - am
+      // 3 aria-controls for left, mobile, right on 2nd level buttons. 1st level has no button on right
+      if (elArias.length >=3 ) {
+        elArias.forEach((element) => {
+            element.setAttribute('aria-expanded', !isOpen); // every matching node, one of which will be el
+
+            if (isOpen) {     // every matching node, including el
+              element.classList.remove(classes.open);
+            } else {
+              //if doesn't already have classes.open
+              var stateElement = element.classList.contains(classes.open); // if it odesn't already have .is-open
+              if (!stateElement) {
+                element.classList.add(classes.open);
+              }
+            }
+        });
+      // ALL collapsibles as well as Help Center page buttons at the 1st level - am
+      } else {
+        el.setAttribute('aria-expanded', !isOpen);
+        if (isOpen) {
+          el.classList.remove(classes.open);
+        } else {
+          el.classList.add(classes.open);
+        }
+      }
+
+
       setTransitionHeight(container, height, isOpen, isAutoHeight);
+
+      // on Help Center page - am
+      if (containerRight) {
+        setTransitionHeight(containerRight, heightRight, isOpen, isAutoHeightRight);
+      }
+
+      // on Help Center page - am
+      if (containerMobile) {
+        setTransitionHeight(containerMobile, heightMobile, isOpen, isAutoHeightMobile);
+      }
+
+      // on Help Center page - am
+      if (containerMobile && isOpen) {
+        activeMobileTitle.classList.remove("active-title");
+      } else if (containerMobile && !isOpen) {
+        activeMobileTitle.classList.add("active-title");
+      }
   
       // If we are in a nested collapsible element like the mobile nav,
       // also set the parent element's height
@@ -2074,7 +2225,79 @@ lazySizesConfig.expFactor = 4;
 
           setTransitionHeight(parentCollapsibleEl, totalHeight, false, false);
       }
-  
+
+
+      // close all other blocks & sub-blocks on Help Page when target element is clicked open - am
+      if (window.counter <= 0 && window.location.href.includes("help-center")) {  // el is from a click, not the url params
+        var elMain = el.classList.contains("main-block"); 
+        var elSub = el.classList.contains("sub-block"); 
+
+        if (elMain) {  //el is a main trigger
+          var allMainBlocks = document.querySelectorAll(".main-block");
+
+          allMainBlocks.forEach((item) => {
+            var elAttribute = item.getAttribute('aria-controls');
+            var elRightAttribute = item.getAttribute('aria-controls-right');
+            var elMobileAttribute = item.getAttribute('aria-controls-mobile');
+
+            if (elAttribute != moduleId) { // all main triggers have same aria-controls
+              var itemOpen = item.classList.contains("is-open"); 
+              if (itemOpen) {    // we're only closing main triggers, won't close a sub-trigger with .is-open
+                item.classList.remove("is-open");
+                item.setAttribute('aria-expanded', false);
+
+                var itemContainer = document.getElementById(elAttribute);
+                var itemRightContainer = document.getElementById(elRightAttribute);
+                var itemMobileContainer = document.getElementById(elMobileAttribute);
+                var closeHeight = 0;
+
+                setTransitionHeight(itemContainer, closeHeight, true, true);
+                setTransitionHeight(itemRightContainer, closeHeight, true, true);
+                if (itemMobileContainer) {
+                  setTransitionHeight(itemMobileContainer, closeHeight, true, true);
+                }
+              }
+            }
+          });
+        } else if (elSub) {  //el is a sub trigger
+          var allSubBlocks = document.querySelectorAll(".sub-block");
+
+          allSubBlocks.forEach((item) => {
+            var elAttribute = item.getAttribute('aria-controls');
+
+            if (elAttribute != moduleId) { // all main triggers have same aria-controls
+              var itemOpen = item.classList.contains("is-open"); 
+              if (itemOpen) {    // we're only closing main triggers, won't close a sub-trigger with .is-open
+                item.classList.remove("is-open");
+                item.setAttribute('aria-expanded', false);
+
+                var itemContainer = document.getElementById(elAttribute);
+                var closeHeight = 0;
+
+                setTransitionHeight(itemContainer, closeHeight, true, true);
+
+                if (parentCollapsibleEl) {
+                    var heightOriginalEl = itemContainer.querySelector(selectors.moduleInner).offsetHeight;
+                    var heightNewItem = height;
+                    var totalNewHeight = parentCollapsibleEl.offsetHeight - heightOriginalEl + heightNewItem;
+
+                    setTransitionHeight(parentCollapsibleEl, totalNewHeight, false, false);
+                }
+              }
+            }
+          });
+        }
+      }
+
+      if (heightRight != 0 && window.location.href.includes("help-center")) { // a main right container is open
+        if (window.counter <= 0 && !isOpen)  {
+          newTitle(el);
+        }
+      }
+
+      window.counter = window.counter - 1;
+
+
       // If Shopify Product Reviews app installed,
       // resize container on 'Write review' click
       // that shows form
@@ -2116,6 +2339,9 @@ lazySizesConfig.expFactor = 4;
     };
   })();
   
+
+
+
   // Shopify-built select-like popovers for currency and language selection
   theme.Disclosure = (function() {
     var selectors = {

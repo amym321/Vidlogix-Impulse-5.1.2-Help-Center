@@ -1,4 +1,5 @@
 <div
+  class="{% if template == 'page.faq-help-center' %} help-center-banner {% endif %}"
   data-section-id="{{ section.id }}"
   data-section-type="slideshow-section"
   {% if section.settings.parallax %}data-parallax="true"{% endif %}>
@@ -230,9 +231,11 @@
                         {%- endunless -%}
                         {%- unless block.settings.title == blank -%}
                           <h2 class="h1 hero__title">
-                            <div class="animation-cropper"><div class="animation-contents">
-                            {{ block.settings.title | newline_to_br }}
-                            </div></div>
+                            <div class="animation-cropper">
+                              <div  id="hero-text"  class="animation-contents">
+                              {{ block.settings.title | newline_to_br }}
+                              </div>
+                            </div>
                           </h2>
                         {%- endunless -%}
                         {%- if block.settings.subheading or block.settings.link or block.settings.link_2 -%}
@@ -302,6 +305,10 @@
           {
             "label": "Natural",
             "value": "natural"
+          },
+          {
+            "label": "375px",
+            "value": "375px"
           },
           {
             "label": "450px",

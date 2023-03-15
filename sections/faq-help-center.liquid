@@ -1,0 +1,489 @@
+{% comment %} help center - am {% endcomment %}
+
+{%- if section.settings.divider -%}<div class="section--divider">{%- endif -%}
+
+<Div id="help-center" class="help-center {% unless template == 'page.terms' %} index-section {% endunless %}">
+
+  <div>
+    {%- if section.settings.title != blank -%}
+      <header class="section-header">
+        <h2 class="section-header__title">
+          {{ section.settings.title | escape }}
+        </h2>
+      </header>
+    {%- endif -%}
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="help-center-wrapper" >
+
+      {% comment %} left side - questions {% endcomment %}
+      {% comment %} FLEX BASIS CHANGES WITH SCREEN WIDTH {% endcomment %}
+        <div id="helpCenterLeft" class="help-center-left" style="display:none;" >
+
+          <div style="position:relative;">
+            <div class="left-wrapper">
+              {%- for block in section.blocks -%}
+                <div {{ block.shopify_attributes }} class="left-section-block">
+                  {% case block.type %}
+                    {% when 'question'%}
+                      <div class="faq-section faq-left-{{ block.id }}" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button type="button" class="main-block left-main-trigger collapsible-trigger collapsible-trigger--inline collapsible--auto-height text-left"
+                            aria-controls-right="HC-right-{{ block.id }}" aria-controls="HC-left-{{ block.id }}"
+                            data-main-trigger="{{block.id}}">
+                          {%- render 'collapsible-icons-alt', no_circle: true -%}
+                          <h4><span class="main-title" itemprop="name">{{ block.settings.title }}</span></h4>
+                        </button>
+
+                        <div id="HC-left-{{ block.id }}" class="collapsible-content collapsible-content--all"
+                            itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                          <div style="padding-top:0;" class="collapsible-content__inner collapsible-content__inner--faq rte" itemprop="text">
+                            {% if block.settings.subheading-1 != empty %}
+                              <button  type="button" class="sub-block left-sub-trigger collapsible-right-trigger collapsible-trigger collapsible-trigger--inline collapsible--auto-height text-left" 
+                                aria-controls="HC-{{ block.id }}-1">
+                                <h4 class="rte"><a itemprop="name" class="subheading-left" ><span>{{ block.settings.subheading-1 }}</span></a></h4>
+                              </button>
+                            {% endif %}
+                            {% if block.settings.subheading-2 != empty %}
+                              <button  type="button" class="sub-block collapsible-trigger collapsible-trigger--inline collapsible--auto-height text-left" aria-controls="HC-{{ block.id }}-2">
+                                <h4 class="rte"><a itemprop="name" class="subheading-left" ><span>{{ block.settings.subheading-2 }}</span></a></h4>
+                              </button>
+                            {% endif %}
+                            {% if block.settings.subheading-3 != empty %}
+                              <button  type="button" class="sub-block collapsible-trigger collapsible-trigger--inline collapsible--auto-height text-left" aria-controls="HC-{{ block.id }}-3">
+                                <h4 class="rte"><a itemprop="name" class="subheading-left" ><span>{{ block.settings.subheading-3 }}</span></a></h4>
+                              </button>
+                            {% endif %}
+                            {% if block.settings.subheading-4 != empty %}
+                              <button  type="button" class="sub-block collapsible-trigger collapsible-trigger--inline collapsible--auto-height text-left" aria-controls="HC-{{ block.id }}-4">
+                                <h4 class="rte"><a itemprop="name" class="subheading-left" ><span>{{ block.settings.subheading-4 }}</span></a></h4>
+                              </button>
+                            {% endif %} 
+                            {% if block.settings.subheading-5 != empty %}
+                              <button  type="button" class="sub-block collapsible-trigger collapsible-trigger--inline collapsible--auto-height text-left" aria-controls="HC-{{ block.id }}-5">
+                                <h4 class="rte"><a itemprop="name" class="subheading-left" ><span>{{ block.settings.subheading-5 }}</span></a></h4>
+                              </button>
+                            {% endif %}
+                            {% if block.settings.subheading-6 != empty %}
+                              <button  type="button" class="sub-block collapsible-trigger collapsible-trigger--inline collapsible--auto-height text-left" aria-controls="HC-{{ block.id }}-6">
+                                <h4 class="rte"><a itemprop="name" class="subheading-left" ><span>{{ block.settings.subheading-6 }}</span></a></h4>
+                              </button>
+                            {% endif %} 
+                            {% if block.settings.subheading-7 != empty %}
+                              <button  type="button" class="sub-block collapsible-trigger collapsible-trigger--inline collapsible--auto-height text-left" aria-controls="HC-{{ block.id }}-7">
+                                <h4 class="rte"><a itemprop="name" class="subheading-left" ><span>{{ block.settings.subheading-7 }}</span></a></h4>
+                              </button>
+                            {% endif %}
+                          </div>
+                        </div>
+
+                      </div>
+                  {% endcase %}
+                </div>
+              {%- endfor -%}
+
+              {% render 'help-contact-box', display: 'desktop'  %}
+
+            </div>
+          </div>
+        </div>
+
+      {% render 'help-nav-mobile' %}
+
+      {% comment %} right side - answers {% endcomment %}
+        <div id="helpCenterRight" class="help-center-right">
+          <div class="right-wrapper">
+          
+            {%- for block in section.blocks -%}
+              <div {{ block.shopify_attributes }} >
+                {% case block.type %}
+                  {% when 'question'%}
+                    <div id="HC-right-{{ block.id }}"
+                        class="collapsible-content collapsible-content--all" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                      <div class="collapsible-content__inner collapsible-content__inner--faq rte" style="padding-top:0;" itemprop="text">
+                        <div class="faq-right-{{ block.id }}" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                            <div class=" collapsible-content__inner collapsible-content__inner--faq rte" itemprop="text">
+                              {% if block.settings.subheading-1 != empty %}
+                                {% render 'help-right-subblock', block_id: block.id, sub_block: '1', sub_text: block.settings.text-1, sub_heading: block.settings.subheading-1  %}
+                              {% endif %}
+                              {% if block.settings.subheading-2 != empty  %}
+                                {% render 'help-right-subblock', block_id: block.id, sub_block: '2', sub_text: block.settings.text-2, sub_heading: block.settings.subheading-2 %}
+                              {% endif %}
+                              {% if block.settings.subheading-3 != empty %}
+                                {% render 'help-right-subblock', block_id: block.id, sub_block: '3', sub_text: block.settings.text-3, sub_heading: block.settings.subheading-3 %}
+                              {% endif %}
+                              {% if block.settings.subheading-4 != empty  %}
+                                {% render 'help-right-subblock', block_id: block.id, sub_block: '4', sub_text: block.settings.text-4, sub_heading: block.settings.subheading-4 %}
+                              {% endif %}
+                              {% if block.settings.subheading-5 != empty  %}
+                                {% render 'help-right-subblock', block_id: block.id, sub_block: '5', sub_text: block.settings.text-5, sub_heading: block.settings.subheading-5 %}
+                              {% endif %}
+                              {% if block.settings.subheading-6 != empty %}
+                                {% render 'help-right-subblock', block_id: block.id, sub_block: '6', sub_text: block.settings.text-6, sub_heading: block.settings.subheading-6 %}
+                              {% endif %}
+                              {% if block.settings.subheading-7 != empty  %}
+                                {% render 'help-right-subblock', block_id: block.id, sub_block: '7', sub_text: block.settings.text-7, sub_heading: block.settings.subheading-7 %}
+                              {% endif %}
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                {% endcase %}
+              </div>
+            {%- endfor -%}
+          </div>
+
+        </div>
+
+        {% render 'help-contact-box', display: 'mobile'  %}
+
+      </div>
+
+      
+    {%- endif -%}
+
+    {%- if section.blocks.size == 0 -%}
+      <div class="placeholder-noblocks">
+        {{ 'home_page.onboarding.no_content' | t }}
+      </div>
+    {%- endif -%}
+  </div>
+</Div>
+
+{%- if section.settings.divider -%}</div>{%- endif -%}
+
+<style>
+/* Slidewhow Hero Banner */
+.help-center-banner .animation-contents {
+  color: #fff;
+  font-weight: bold;
+}
+
+  
+/* FAQ's */
+  /*show left nav */
+@media (min-width: 1024px) {
+  #helpCenterLeft {
+    display:block !important;
+  }
+}
+
+.help-center {
+  padding:0;
+  margin:0;
+}
+
+.help-center h1, .help-center h2, .help-center h3, .help-center h4, .help-center h5 {
+  font-family: "Sofia Pro";
+}
+
+.help-center .collapsible-trigger__icon {
+  transform: translateY(-20px);
+}
+.help-center .collapsible-trigger__icon--circle {
+  border-color: #ffffff00;
+}
+
+/* LEFT DESKTOP */
+@media (min-width: 1024px) {
+  .help-center-wrapper {
+    display: flex;
+    margin: 0 auto;
+    min-height: 375px;
+  }
+}
+
+/* LEFT DESKTOP */
+@media screen and (min-width: 1024px) {
+  .help-center-left {
+    flex-shrink: 0;
+    padding-top: 50px; 
+    padding-bottom: 50px;
+    background-color: #fff !important;
+  }
+}
+@media screen and (min-width: 1485px) {
+  .help-center .help-center-left {
+    flex-basis: 490px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .help-center .help-center-left {
+    flex-basis: 550px;
+  }
+}
+@media screen and (min-width: 2095px) {
+  .help-center .help-center-left {
+    flex-basis: calc((100% - (1900px + 180px))/ 2 + 490px);
+  }
+}
+
+/* LEFT DESKTOP */
+@media screen and (min-width: 1024px) {
+  .left-wrapper {
+    padding: 50px 50px;  
+    margin-left:auto; 
+    max-width: 400px;
+  }
+}
+
+/* LEFT DESKTOP */
+@media screen and (min-width: 1024px) {
+  .help-center .left-section-block {
+    max-width: 500px;
+  }
+}
+  /* MOBILE NAV */
+@media screen and (max-width: 1023px) {
+  .help-center .left-section-block {
+    min-width: 100%;
+  }
+}
+
+.help-center  .left-main-trigger {
+  padding: 20px 0 11px;
+}
+
+/* MOBILE NAV */
+@media screen and (max-width: 1023px) {
+  .help-center-left .collapsible-content__inner  {
+    display:flex;
+    white-space: nowrap;
+    justify-content: space-evenly;   /* needs width unset on collapsible-trigger */
+  }
+}
+
+.help-center .faq-section {
+  border-bottom: 1px solid #cccbcb;
+}
+
+/* LEFT DESKTOP */
+@media screen and (min-width: 1024px) {
+  .help-center .subheading-left {
+    margin-left:30px;
+    border-bottom-color: #ffffff00 !important;
+    display: unset !important;
+  }
+}
+
+.help-center .help-center-right {
+  flex-grow: 1;
+  padding-top: 50px;
+  background: top center repeat;
+  background-image: url('//cdn.shopify.com/s/files/1/0056/9632/3651/files/help_center_background_d28a5386-e31b-4a16-bc2d-2461e317a7a9.jpg');
+}
+
+.help-center .right-wrapper {
+  padding: 50px 50px; 
+  max-width: 1000px;
+}
+@media screen and (max-width: 550px) {
+  .help-center .right-wrapper {
+    padding: 20px 36px; 
+  }
+}
+
+.help-center .help-center-right .rte.collapsible-content__inner--faq {
+  padding-top: 0;
+}
+
+.help-center .help-center-right  .faq-section button.collapsible-trigger--inline span {
+  font-weight: normal;
+}
+
+/* RIGHT */
+.help-center .collapsible-right-container.is-open {
+  opacity: 1;
+  visibility: visible;
+  max-height: 4000px;
+  -webkit-transition: opacity 600ms, visibility 600ms, max-height 600ms;
+  transition: opacity 600ms, visibility 600ms, max-height 600ms ease-in;
+}
+.help-center .collapsible-right-container.is-closed {
+  opacity: 0;
+  visibility: hidden;
+  max-height: 0;
+  -webkit-transition: opacity 600ms, visibility 600ms, max-height 600ms;
+  transition: opacity 600ms, visibility 600ms, max-height 600ms ease-out;
+}
+
+.left-section-block .collapsible-content__inner .is-open .subheading-left span,
+.help-center-nav .sub-nav-list .is-open a span, /* mobile subblock*/
+.help-center-nav .is-open:first-child a span {/* mobile main block*/
+  border-bottom: 2px solid;
+  bottom: 1px;
+  /*color: #000;*/
+  position: relative;
+  display: inline-block;
+  -webkit-transition: border-bottom 600ms, color 600ms;
+  transition: border-bottom 600ms, color 600ms;
+}
+.help-center-nav .sub-nav-list .is-open a span, /* mobile subblock*/
+.help-center-nav .is-open:first-child a span { /* mobile main block*/
+  bottom: -1px;
+}
+
+/* sticky mobile header */
+.help-center .sticky-padded {
+  padding-top: 140px !important;
+}
+</style>
+
+
+<script>
+ // sticky header for left mobile nav - only run when < 1024 since right side padding gets adjusted
+  if (window.innerWidth < 1024) {
+    window.onscroll = function() { stickyHelp2()};
+  }
+
+  var helpHeader2 = document.getElementById("helpCenterNav2");
+  var stickyLeft2 = helpHeader2.offsetTop;
+  var helpRight = document.getElementById("helpCenterRight");
+
+  function stickyHelp2() {
+    if (window.pageYOffset > stickyLeft2) {
+      helpHeader2.classList.add("sticky");
+      helpRight.classList.add("sticky-padded");
+    } else {
+      helpHeader2.classList.remove("sticky");
+      helpRight.classList.remove("sticky-padded");
+    }
+  }
+</script>
+
+
+{% schema %}
+  {
+    "name": "FAQ Help Center",
+    "class": "nothing",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Section Heading",
+        "default": "FAQ Help Center."
+      },
+      {
+        "type": "text",
+        "id": "contact-help",
+        "label": "Contact Us Box",
+        "default": "Contact Support"
+      },
+      {
+        "type": "url",
+        "id": "contact-link",
+        "label": "Contact Us link"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "question",
+        "name": "FAQ",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Heading",
+            "default": "Heading title",
+            "info": "Headings are the 1st level."
+          },
+          {
+            "type": "text",
+            "id": "subheading-1",
+            "label": "Subheading 1",
+            "default": "Subheading title",
+            "info": "Subheadings are the indented 2nd level within a Heading."
+          },
+          {
+            "type": "richtext",
+            "id": "text-1",
+            "label": "Text Response to Subheading 1",
+            "default": "<p>Use the text to answer questions</p>"
+          },
+          {
+            "type": "text",
+            "id": "subheading-2",
+            "label": "Subheading 2",
+            "default": "Subheading title"
+          },
+          {
+            "type": "richtext",
+            "id": "text-2",
+            "label": "Text Response to Subheading 2",
+            "default": "<p>Use the text to answer questions</p>"
+          },
+          {
+            "type": "text",
+            "id": "subheading-3",
+            "label": "Subheading 3",
+            "default": "Subheading title"
+          },
+          {
+            "type": "richtext",
+            "id": "text-3",
+            "label": "Text Response to Subheading 3",
+            "default": "<p>Use the text to answer questions</p>"
+          },
+          {
+            "type": "text",
+            "id": "subheading-4",
+            "label": "Subheading 4",
+            "default": "Subheading title"
+          },
+          {
+            "type": "richtext",
+            "id": "text-4",
+            "label": "Text Response to Subheading 4",
+            "default": "<p>Use the text to answer questions</p>"
+          },
+          {
+            "type": "text",
+            "id": "subheading-5",
+            "label": "Subheading 5",
+            "default": "Subheading title"
+          },
+          {
+            "type": "richtext",
+            "id": "text-5",
+            "label": "Text Response to Subheading 5",
+            "default": "<p>Use the text to answer questions</p>"
+          },
+          {
+            "type": "text",
+            "id": "subheading-6",
+            "label": "Subheading 6",
+            "default": "Subheading title"
+          },
+          {
+            "type": "richtext",
+            "id": "text-6",
+            "label": "Text Response to Subheading 6",
+            "default": "<p>Use the text to answer questions</p>"
+          },
+          {
+            "type": "text",
+            "id": "subheading-7",
+            "label": "Subheading 7",
+            "default": "Subheading title"
+          },
+          {
+            "type": "richtext",
+            "id": "text-7",
+            "label": "Text Response to Subheading 7",
+            "default": "<p>Use the text to answer questions</p>"
+          }
+        ]
+      }
+    ],
+    "presets": [{
+      "name": "FAQ",
+      "blocks": [
+        {
+          "type": "question"
+        },
+        {
+          "type": "question"
+        }
+      ]
+    }]
+  }
+{% endschema %}
