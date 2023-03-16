@@ -2276,13 +2276,13 @@ lazySizesConfig.expFactor = 4;
 
                 setTransitionHeight(itemContainer, closeHeight, true, true);
 
-                if (parentCollapsibleEl) {
-                    var heightOriginalEl = itemContainer.querySelector(selectors.moduleInner).offsetHeight;
-                    var heightNewItem = height;
-                    var totalNewHeight = parentCollapsibleEl.offsetHeight - heightOriginalEl + heightNewItem;
+                // if (parentCollapsibleEl) {
+                //     var heightOriginalEl = itemContainer.querySelector(selectors.moduleInner).offsetHeight;
+                //     var heightNewItem = height;
+                //     var totalNewHeight = parentCollapsibleEl.offsetHeight - heightOriginalEl + heightNewItem;
 
-                    setTransitionHeight(parentCollapsibleEl, totalNewHeight, false, false);
-                }
+                //     setTransitionHeight(parentCollapsibleEl, totalNewHeight, false, false);
+                // }
               }
             }
           });
