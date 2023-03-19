@@ -2267,10 +2267,12 @@ lazySizesConfig.expFactor = 4;
                 }
               }
               // now close all right containers not tied to new moduleId whether the left side is open or closed
-              var itemRightContainer = document.getElementById(elRightAttribute);
-              var testRightContainer = itemRightContainer.classList.contains('is-open');
-              if (testRightContainer) {
-                setTransitionHeight(itemRightContainer, closeHeight, true, true);
+              if (elRightAttribute) {
+                var itemRightContainer = document.getElementById(elRightAttribute);
+                var testRightContainer = itemRightContainer.classList.contains('is-open');
+                if (testRightContainer) {
+                  setTransitionHeight(itemRightContainer, closeHeight, true, true);
+                }
               }
             }
           });
