@@ -2158,12 +2158,12 @@ lazySizesConfig.expFactor = 4;
         }, 0);
       }
 
-      // if (isOpen && isAutoHeightRight) {
-      //   setTimeout(function() {
-      //     heightRight = 0;
-      //     setTransitionHeight(containerRight, heightRight, isOpen, isAutoHeightRight);
-      //   }, 0);
-      // }
+      if (isOpen && isAutoHeightRight) {
+        setTimeout(function() {
+          heightRight = 0;
+          setTransitionHeight(containerRight, heightRight, isOpen, isAutoHeightRight);
+        }, 0);
+      }
   
       if (isOpen && !isAutoHeight) {
         height = 0;
@@ -2180,7 +2180,7 @@ lazySizesConfig.expFactor = 4;
         elArias.forEach((element) => {
             element.setAttribute('aria-expanded', !isOpen); // every matching node, one of which will be el
 
-            if (isOpen) {     // every matching node, including el
+            if (isOpen) {     // on every matching node, including el
               element.classList.remove(classes.open);
             } else {
               //if doesn't already have classes.open
@@ -2204,7 +2204,7 @@ lazySizesConfig.expFactor = 4;
       setTransitionHeight(container, height, isOpen, isAutoHeight);
 
       // on Help Center page - am
-      if (containerRight && !isOpen) { // only used to open right container, not close it. only closes nelow when another is opened
+      if (containerRight && !isOpen) { // only used to open right container of el, not close it. only closes nelow when another is opened
         setTransitionHeight(containerRight, heightRight, isOpen, isAutoHeightRight);
       }
 
@@ -2252,20 +2252,25 @@ lazySizesConfig.expFactor = 4;
 
             if (elAttribute != moduleId) { // all main triggers have same aria-controls
               var itemOpen = item.classList.contains("is-open"); 
+              var closeHeight = 0;
+
               if (itemOpen) {    // we're only closing main triggers, won't close a sub-trigger with .is-open
                 item.classList.remove("is-open");
                 item.setAttribute('aria-expanded', false);
 
                 var itemContainer = document.getElementById(elAttribute);
-                var itemRightContainer = document.getElementById(elRightAttribute);
                 var itemMobileContainer = document.getElementById(elMobileAttribute);
-                var closeHeight = 0;
 
                 setTransitionHeight(itemContainer, closeHeight, true, true);
-                setTransitionHeight(itemRightContainer, closeHeight, true, true);
                 if (itemMobileContainer) {
                   setTransitionHeight(itemMobileContainer, closeHeight, true, true);
                 }
+              }
+              // now close all right containers not tied to new moduleId whether the left side is open or closed
+              var itemRightContainer = document.getElementById(elRightAttribute);
+              var testRightContainer = itemRightContainer.classList.contains('is-open');
+              if (testRightContainer) {
+                setTransitionHeight(itemRightContainer, closeHeight, true, true);
               }
             }
           });
@@ -2306,7 +2311,6 @@ lazySizesConfig.expFactor = 4;
       }
 
       window.counter = window.counter - 1;
-
 
       // If Shopify Product Reviews app installed,
       // resize container on 'Write review' click
