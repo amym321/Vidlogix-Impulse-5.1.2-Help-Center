@@ -20,7 +20,7 @@
       {% comment %} FLEX BASIS CHANGES WITH SCREEN WIDTH {% endcomment %}
         <div id="helpCenterLeft" class="help-center-left" style="display:none;" >
 
-          <div style="position:relative;">
+          <div  id="pin1" class="help-box left-box" style="position:relative;">
             <div class="left-wrapper">
               {%- for block in section.blocks -%}
                 <div {{ block.shopify_attributes }} class="left-section-block">
@@ -91,7 +91,7 @@
 
       {% comment %} right side - answers {% endcomment %}
         <div id="helpCenterRight" class="help-center-right">
-          <div class="right-wrapper">
+          <div id="right-wrapper" class="right-wrapper help-box">
           
             {%- for block in section.blocks -%}
               <div {{ block.shopify_attributes }} >
@@ -131,6 +131,7 @@
               </div>
             {%- endfor -%}
           </div>
+          <div class="spacer s2"></div>
 
         </div>
 
@@ -326,6 +327,11 @@
 .help-center .sticky-padded {
   padding-top: 140px !important;
 }
+
+.scrollmagic-pin-spacer {
+  margin-left:auto !important;
+}
+
 </style>
 
 
@@ -337,17 +343,24 @@
 
   var helpHeader2 = document.getElementById("helpCenterNav2");
   var stickyLeft2 = helpHeader2.offsetTop;
-  var helpRight = document.getElementById("helpCenterRight");
+  var helpRight2 = document.getElementById("helpCenterRight");
 
   function stickyHelp2() {
     if (window.pageYOffset > stickyLeft2) {
       helpHeader2.classList.add("sticky");
-      helpRight.classList.add("sticky-padded");
+      helpRight2.classList.add("sticky-padded");
     } else {
       helpHeader2.classList.remove("sticky");
-      helpRight.classList.remove("sticky-padded");
+      helpRight2.classList.remove("sticky-padded");
     }
   }
+</script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js" integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+  var controller = new ScrollMagic.Controller({});
 </script>
 
 
