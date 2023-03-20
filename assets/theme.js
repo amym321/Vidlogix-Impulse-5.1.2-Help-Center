@@ -1955,7 +1955,7 @@ lazySizesConfig.expFactor = 4;
   // Either collapsible containers all acting individually,
   // or tabs that can only have one open at a time
   window.counter = 0;
-  window.lastEl = "";
+  //window.lastEl = "";
   window.flag = false;
   if (window.location.href.includes("help-center")) {
     window.flag = true;
@@ -2293,13 +2293,13 @@ lazySizesConfig.expFactor = 4;
 
                 setTransitionHeight(itemContainer, closeHeight, true, true);
 
-                // if (parentCollapsibleEl) {
-                //     var heightOriginalEl = itemContainer.querySelector(selectors.moduleInner).offsetHeight;
-                //     var heightNewItem = height;
-                //     var totalNewHeight = parentCollapsibleEl.offsetHeight - heightOriginalEl + heightNewItem;
+                if (parentCollapsibleEl) {
+                    var heightOriginalEl = itemContainer.querySelector(selectors.moduleInner).offsetHeight;
+                    var heightNewItem = height;
+                    var totalNewHeight = parentCollapsibleEl.offsetHeight - heightOriginalEl + heightNewItem;
 
-                //     setTransitionHeight(parentCollapsibleEl, totalNewHeight, false, false);
-                // }
+                    setTransitionHeight(parentCollapsibleEl, totalNewHeight, false, false);
+                }
               }
             }
           });
