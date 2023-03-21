@@ -2274,27 +2274,47 @@ lazySizesConfig.expFactor = 4;
                   setTransitionHeight(itemRightContainer, closeHeight, true, true);
                 }
               }
+              // lastly, close all subblocks in old main container before leaving so they don't interfere with subblock switching later within the new main container
+              var allSubBlocks = document.querySelectorAll(".sub-block"); // all 2nd level button (left, right, mobile)
+              
+              allSubBlocks.forEach((item) => {
+                var elAttribute = item.getAttribute('aria-controls');
+
+                if (elAttribute != moduleId) { // all main triggers have same aria-controls
+                  var itemOpen = item.classList.contains("is-open");
+                  if (itemOpen) {   // for left, right, & mobile subblocks that are open
+                    item.classList.remove("is-open");
+                    item.setAttribute('aria-expanded', false);
+  
+                    var itemContainer = document.getElementById(elAttribute); // gets 1st element with aria-controls in it
+                    console.log('log 306) itemContainer innerhtml = '+ itemContainer.innerHTML);
+                    var closeHeight = 0;
+  
+                    setTransitionHeight(itemContainer, closeHeight, true, true);
+                  }
+                }
+              })
             }
           });
         } else if (elSub) {  //el is a sub trigger
-          var allSubBlocks = document.querySelectorAll(".sub-block");
+          var allSubBlocks = document.querySelectorAll(".sub-block"); // all 2nd level button (left, right, mobile)
 
           allSubBlocks.forEach((item) => {
             var elAttribute = item.getAttribute('aria-controls');
 
             if (elAttribute != moduleId) { // all main triggers have same aria-controls
               var itemOpen = item.classList.contains("is-open"); 
-              if (itemOpen) {    // we're only closing main triggers, won't close a sub-trigger with .is-open
+              if (itemOpen) {    // for left, right, & mobile subblock buttons that are open. they all reference the same right content via ID
                 item.classList.remove("is-open");
                 item.setAttribute('aria-expanded', false);
 
-                var itemContainer = document.getElementById(elAttribute);
+                var itemContainer = document.getElementById(elAttribute); // gets 1st element with aria-controls in it
                 var closeHeight = 0;
 
                 setTransitionHeight(itemContainer, closeHeight, true, true);
 
                 if (parentCollapsibleEl) {
-                    var heightOriginalEl = itemContainer.querySelector(selectors.moduleInner).offsetHeight;
+                    var heightOriginalEl = itemContainer.querySelector(selectors.moduleInner).offsetHeight; // moduleInner = .collapsible-content__inner
                     var heightNewItem = height;
                     var totalNewHeight = parentCollapsibleEl.offsetHeight - heightOriginalEl + heightNewItem;
 
