@@ -13,7 +13,7 @@
           "type": "image",
           "settings": {
             "top_subheading": "",
-            "title": "HELP CENTER",
+            "title": "LEGAL",
             "title_size": 50,
             "subheading": "",
             "chat_widget": false,
@@ -104,33 +104,12 @@
             "subheading-7": "Price Protection",
             "text-7": "<p>We don't mark prices up only to mark them down and call it a \"sale.\" We work directly with our manufacturing partners to always bring you the best quality at the lowest possible price. That said, Vidlogix will match the price shown on any US-based retailer's website for the identical in-stock product (same size, color, year).<\/p><p><strong>Before you buy<\/strong> <\/p><p>Vidlogix will match the price shown on any US-based retailer's website for the identical in-stock product (same size, color, year).<\/p><p><strong>Exclusions apply<\/strong><\/p><ul><li>Products shipped from or sold by third-party sellers on websites.<\/li><li>Competitor offers including, but not limited to, delivery and installation charges, pre-order offers, rent\/lease to own items, liquidation offers, trade-in offers, items denoted as Black Friday pricing, and special daily or hourly sales.<\/li><li>Financing offers, bundle offers, items included in bundle offers, subscription services, free items, pricing errors, mail-in offers, coupon offers, items that are advertised as limited quantity, out-of-stock items, clearance items, open-box items, refurbished items, pre-owned items, credit card offers, gift card offers, items included in gift card offers, Point of Sale Activation cards, voice-only deals, and items for sale the Friday before Thanksgiving Day through the Monday after Thanksgiving, whether offered by a competitor or us.<\/li><\/ul>"
           }
-        },
-        "736d8c3b-98ae-4d58-93ac-e98f881a4aab": {
-          "type": "question",
-          "settings": {
-            "title": "Customer Service",
-            "subheading-1": "Technical Support",
-            "text-1": "<p><strong>Need Help? We're Here 24\/7\/365!<\/strong><\/p><p>Stumped by a system or lost amidst the latest tech? Vidlogix Experts are hand-picked for their knowledge, field experience, training and above all, approachability. So when you need answers, we're ready with tailored solutions to your individual needs, concerns and budget. It's the next best thing to having a friend in the industry.<\/p><p><strong>People, not algorithms<\/strong><\/p><p>We hire and extensively train our product specialists so that each one can speak from a place of confidence and expertise... which means when you need answers, we're ready with solutions, tailored to you.<\/p><p>Call\/Text: <a href=\"tel:6313725004\" target=\"_blank\" title=\"Call or Text Vidlogix Technical Support\">631-372-500<\/a><\/p><p>E-mail: <a href=\"mailto:hello@vidlogix.com\" target=\"_blank\" title=\"hello@vidlogix.com\">hello@vidlogix.com<\/a><\/p><p><strong>Vidlogix Protection Plus<\/strong><\/p><p>Vidlogix will cover the cost of repair or replacement if your gear is damaged or breaks from normal wear and tear or accidental handling. Vidlogix handles all processing, claims, and follow-up.<\/p><p>Plans are competitively priced to meet your coverage needs. Plus, there's no middleman or lengthy approval process, meaning approved claims are settled in days, not weeks.<\/p>",
-            "subheading-2": "",
-            "text-2": "",
-            "subheading-3": "",
-            "text-3": "",
-            "subheading-4": "",
-            "text-4": "",
-            "subheading-5": "",
-            "text-5": "",
-            "subheading-6": "",
-            "text-6": "",
-            "subheading-7": "",
-            "text-7": ""
-          }
         }
       },
       "block_order": [
         "faq-1",
         "faq-2",
-        "faq-3",
-        "736d8c3b-98ae-4d58-93ac-e98f881a4aab"
+        "faq-3"
       ],
       "settings": {
         "title": "",
