@@ -64,10 +64,31 @@
             "subheading-7": "",
             "text-7": ""
           }
+        },
+        "7b49e893-1eaf-434f-96d6-f3d63c27be9d": {
+          "type": "question",
+          "settings": {
+            "title": "Terms of service",
+            "subheading-1": "TBD",
+            "text-1": "<p>TBD<\/p>",
+            "subheading-2": "TBD",
+            "text-2": "<p>TBD<\/p>",
+            "subheading-3": "TBD",
+            "text-3": "<p>TBD<\/p>",
+            "subheading-4": "",
+            "text-4": "",
+            "subheading-5": "",
+            "text-5": "",
+            "subheading-6": "",
+            "text-6": "",
+            "subheading-7": "",
+            "text-7": ""
+          }
         }
       },
       "block_order": [
-        "faq-1"
+        "faq-1",
+        "7b49e893-1eaf-434f-96d6-f3d63c27be9d"
       ],
       "settings": {
         "title": "",
