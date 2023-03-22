@@ -1957,10 +1957,8 @@ lazySizesConfig.expFactor = 4;
   window.counter = 0;
   //window.lastEl = "";
   window.flag = false;
-  if (window.location.href.includes("help-center")) {
+  if (window.location.href.includes("help-center") || window.location.href.includes("legal")) {
     window.flag = true;
-  }
-  if (window.location.href.includes("help-center")) {
     window.pinnedHeight = 1;
   }
 
@@ -1996,57 +1994,58 @@ lazySizesConfig.expFactor = 4;
   
         trigger.off('click' + namespace);
         trigger.on('click' + namespace, toggle);
-        if (window.location.href.includes("help-center")) {
+        if (window.location.href.includes("help-center") || window.location.href.includes("legal")) {
           trigger.on('click' + namespace, getHeightDiff);  //event listener to adjust scrollMagic duration (height)
         }
       });
 
       // open Help Center block 1st time if linked from other page, ie. not triggered by click on Help Center page- am
       // links to Help Center with no block should be https://vidlogix.com/pages/help-center?main_block=FAQ-content-left-faq-2
-      if (window.location.href.includes("help-center") && window.flag == true) {
-        var queryStringUrl = window.location.search;
+      if (window.location.href.includes("help-center") || window.location.href.includes("legal")) {
+        if (window.flag == true) {
+          var queryStringUrl = window.location.search;
 
-        if (queryStringUrl != "") {
-          var urlParams = new URLSearchParams(queryStringUrl);
+          if (queryStringUrl != "") {
+            var urlParams = new URLSearchParams(queryStringUrl);
 
-          var mainBlock = urlParams.get('main_block');
-          var subBlock = urlParams.get('sub_block');
+            var mainBlock = urlParams.get('main_block');
+            var subBlock = urlParams.get('sub_block');
 
-          //use 1st trigger element to open left & right sides, so takes only 1st element with querySelector
-          var elem = document.querySelector('[aria-controls="' + mainBlock + '"]');
-          var elemMobile = document.querySelector('[aria-controls-mobile="' + mainBlock + '-mobile"]');
-          var subElem = document.querySelector('[aria-controls="' + subBlock + '"]');
+            //use 1st trigger element to open left & right sides, so takes only 1st element with querySelector
+            var elem = document.querySelector('[aria-controls="' + mainBlock + '"]');
+            var elemMobile = document.querySelector('[aria-controls-mobile="' + mainBlock + '-mobile"]');
+            var subElem = document.querySelector('[aria-controls="' + subBlock + '"]');
 
-          if (subElem != null) {
-            window.counter = window.counter + 1;
-            toggle(subElem);
-          }
-          if (elemMobile != null) {
-            window.counter = window.counter + 1;
-            toggle(elemMobile);
-          }
-          if (elem != null) {
-            window.counter = window.counter + 1;
-            getHeightDiff(); // dynamic duration (height) for scrollMagic
-            scrollMagic();  // set up scrollMagic once
-            toggle(elem);
-            newTitle(elem);
-          }
-          window.flag = false;  // turn off flag when done
-          window.subHeight = 0; // reset height when done
-        } else {
-          var elem = document.querySelector('[aria-controls]'); // grabs 1st block to open. not working
-          if (elem != null) {
-            window.counter = window.counter + 1;
-            getHeightDiff(); // dynamic duration (height) for scrollMagic
-            scrollMagic();  // set up scrollMagic once
-            toggle(elem);
-            newTitle(elem);
+            if (subElem != null) {
+              window.counter = window.counter + 1;
+              toggle(subElem);
+            }
+            if (elemMobile != null) {
+              window.counter = window.counter + 1;
+              toggle(elemMobile);
+            }
+            if (elem != null) {
+              window.counter = window.counter + 1;
+              getHeightDiff(); // dynamic duration (height) for scrollMagic
+              scrollMagic();  // set up scrollMagic once
+              toggle(elem);
+              newTitle(elem);
+            }
             window.flag = false;  // turn off flag when done
             window.subHeight = 0; // reset height when done
+          } else {
+            var elem = document.querySelector('[aria-controls]'); // grabs 1st block to open. not working
+            if (elem != null) {
+              window.counter = window.counter + 1;
+              getHeightDiff(); // dynamic duration (height) for scrollMagic
+              scrollMagic();  // set up scrollMagic once
+              toggle(elem);
+              newTitle(elem);
+              window.flag = false;  // turn off flag when done
+              window.subHeight = 0; // reset height when done
+            }
           }
         }
-
       }
     }
 
@@ -2238,97 +2237,103 @@ lazySizesConfig.expFactor = 4;
 
 
       // close all other blocks & sub-blocks on Help Page when target element is clicked open - am
-      if (window.counter <= 0 && window.location.href.includes("help-center")) {  // el is from a click, not the url params
-        var elMain = el.classList.contains("main-block"); 
-        var elSub = el.classList.contains("sub-block"); 
+      if (window.location.href.includes("help-center") || window.location.href.includes("legal")) {
+        if (window.counter <= 0) {  // el is from a click, not the url params
+          var elMain = el.classList.contains("main-block"); 
+          var elSub = el.classList.contains("sub-block"); 
 
-        if (elMain) {  //el is a main trigger
-          var allMainBlocks = document.querySelectorAll(".main-block");
+          if (elMain) {  //el is a main trigger
+            var allMainBlocks = document.querySelectorAll(".main-block");
 
-          allMainBlocks.forEach((item) => {
-            var elAttribute = item.getAttribute('aria-controls');
-            var elRightAttribute = item.getAttribute('aria-controls-right');
-            var elMobileAttribute = item.getAttribute('aria-controls-mobile');
+            allMainBlocks.forEach((item) => {
+              var elAttribute = item.getAttribute('aria-controls');
+              var elRightAttribute = item.getAttribute('aria-controls-right');
+              var elMobileAttribute = item.getAttribute('aria-controls-mobile');
 
-            if (elAttribute != moduleId) { // all main triggers have same aria-controls
-              var itemOpen = item.classList.contains("is-open"); 
-              var closeHeight = 0;
-
-              if (itemOpen) {    // we're only closing main triggers, won't close a sub-trigger with .is-open
-                item.classList.remove("is-open");
-                item.setAttribute('aria-expanded', false);
-
-                var itemContainer = document.getElementById(elAttribute);
-                var itemMobileContainer = document.getElementById(elMobileAttribute);
-
-                setTransitionHeight(itemContainer, closeHeight, true, true);
-                if (itemMobileContainer) {
-                  setTransitionHeight(itemMobileContainer, closeHeight, true, true);
-                }
-              }
-              // now close all right containers not tied to new moduleId whether the left side is open or closed
-              if (elRightAttribute) {
-                var itemRightContainer = document.getElementById(elRightAttribute);
-                var testRightContainer = itemRightContainer.classList.contains('is-open');
-                if (testRightContainer) {
-                  setTransitionHeight(itemRightContainer, closeHeight, true, true);
-                }
-              }
-              // lastly, close all subblocks in old main container before leaving so they don't interfere with subblock switching later within the new main container
-              var allSubBlocks = document.querySelectorAll(".sub-block"); // all 2nd level button (left, right, mobile)
-              
-              allSubBlocks.forEach((item) => {
-                var elAttribute = item.getAttribute('aria-controls');
-
-                if (elAttribute != moduleId) { // all main triggers have same aria-controls
-                  var itemOpen = item.classList.contains("is-open");
-                  if (itemOpen) {   // for left, right, & mobile subblocks that are open
-                    item.classList.remove("is-open");
-                    item.setAttribute('aria-expanded', false);
-  
-                    var itemContainer = document.getElementById(elAttribute); // gets 1st element with aria-controls in it
-                    console.log('log 306) itemContainer innerhtml = '+ itemContainer.innerHTML);
-                    var closeHeight = 0;
-  
-                    setTransitionHeight(itemContainer, closeHeight, true, true);
-                  }
-                }
-              })
-            }
-          });
-        } else if (elSub) {  //el is a sub trigger
-          var allSubBlocks = document.querySelectorAll(".sub-block"); // all 2nd level button (left, right, mobile)
-
-          allSubBlocks.forEach((item) => {
-            var elAttribute = item.getAttribute('aria-controls');
-
-            if (elAttribute != moduleId) { // all main triggers have same aria-controls
-              var itemOpen = item.classList.contains("is-open"); 
-              if (itemOpen) {    // for left, right, & mobile subblock buttons that are open. they all reference the same right content via ID
-                item.classList.remove("is-open");
-                item.setAttribute('aria-expanded', false);
-
-                var itemContainer = document.getElementById(elAttribute); // gets 1st element with aria-controls in it
+              if (elAttribute != moduleId) { // all main triggers have same aria-controls
+                var itemOpen = item.classList.contains("is-open"); 
                 var closeHeight = 0;
 
-                setTransitionHeight(itemContainer, closeHeight, true, true);
+                if (itemOpen) {    // we're only closing main triggers, won't close a sub-trigger with .is-open
+                  item.classList.remove("is-open");
+                  item.setAttribute('aria-expanded', false);
 
-                if (parentCollapsibleEl) {
-                    var heightOriginalEl = itemContainer.querySelector(selectors.moduleInner).offsetHeight; // moduleInner = .collapsible-content__inner
-                    var heightNewItem = height;
-                    var totalNewHeight = parentCollapsibleEl.offsetHeight - heightOriginalEl + heightNewItem;
+                  var itemContainer = document.getElementById(elAttribute);
+                  var itemMobileContainer = document.getElementById(elMobileAttribute);
 
-                    setTransitionHeight(parentCollapsibleEl, totalNewHeight, false, false);
+                  setTransitionHeight(itemContainer, closeHeight, true, true);
+                  if (itemMobileContainer) {
+                    setTransitionHeight(itemMobileContainer, closeHeight, true, true);
+                  }
+                }
+                // now close all right containers not tied to new moduleId whether the left side is open or closed
+                if (elRightAttribute) {
+                  var itemRightContainer = document.getElementById(elRightAttribute);
+                  var testRightContainer = itemRightContainer.classList.contains('is-open');
+                  if (testRightContainer) {
+                    setTransitionHeight(itemRightContainer, closeHeight, true, true);
+                  }
+                }
+                // lastly, close all subblocks in old main container before leaving so they don't interfere with subblock switching later within the new main container
+                var allSubBlocks = document.querySelectorAll(".sub-block"); // all 2nd level button (left, right, mobile)
+                
+                allSubBlocks.forEach((item) => {
+                  var elAttribute = item.getAttribute('aria-controls');
+
+                  if (elAttribute != moduleId) { // all main triggers have same aria-controls
+                    var itemOpen = item.classList.contains("is-open");
+                    if (itemOpen) {   // for left, right, & mobile subblocks that are open
+                      item.classList.remove("is-open");
+                      item.setAttribute('aria-expanded', false);
+    
+                      var itemContainer = document.getElementById(elAttribute); // gets 1st element with aria-controls in it
+                      console.log('log 306) itemContainer innerhtml = '+ itemContainer.innerHTML);
+                      var closeHeight = 0;
+    
+                      setTransitionHeight(itemContainer, closeHeight, true, true);
+                    }
+                  }
+                })
+              }
+            });
+          } else if (elSub) {  //el is a sub trigger
+            var allSubBlocks = document.querySelectorAll(".sub-block"); // all 2nd level button (left, right, mobile)
+
+            allSubBlocks.forEach((item) => {
+              var elAttribute = item.getAttribute('aria-controls');
+
+              if (elAttribute != moduleId) { // all main triggers have same aria-controls
+                var itemOpen = item.classList.contains("is-open"); 
+                if (itemOpen) {    // for left, right, & mobile subblock buttons that are open. they all reference the same right content via ID
+                  item.classList.remove("is-open");
+                  item.setAttribute('aria-expanded', false);
+
+                  var itemContainer = document.getElementById(elAttribute); // gets 1st element with aria-controls in it
+                  console.log('log 305) itemContainer innerhtml = '+ itemContainer.innerHTML); //grabbing 
+
+                  var closeHeight = 0;
+
+                  setTransitionHeight(itemContainer, closeHeight, true, true);
+
+                  if (parentCollapsibleEl) { // overriding the parentheight set earlier. should not run if last el was main
+                      var heightOriginalEl = itemContainer.querySelector(selectors.moduleInner).offsetHeight; // moduleInner = .collapsible-content__inner
+                      var heightNewItem = height;
+                      var totalNewHeight = parentCollapsibleEl.offsetHeight - heightOriginalEl + heightNewItem;
+
+                      setTransitionHeight(parentCollapsibleEl, totalNewHeight, false, false);
+                  }
                 }
               }
-            }
-          });
+            });
+          }
         }
       }
 
-      if (heightRight != 0 && window.location.href.includes("help-center")) { // a main right container is open
-        if (window.counter <= 0 && !isOpen)  {
-          newTitle(el);
+      if (window.location.href.includes("help-center") || window.location.href.includes("legal")) {
+        if (heightRight != 0) { // a main right container is open
+          if (window.counter <= 0 && !isOpen)  {
+            newTitle(el);
+          }
         }
       }
 

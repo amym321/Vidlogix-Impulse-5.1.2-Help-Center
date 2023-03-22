@@ -1,0 +1,105 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "657f9cde-4112-4088-8db3-fe9c80e32912": {
+      "type": "slideshow",
+      "blocks": {
+        "template--14856597438531__657f9cde-4112-4088-8db3-fe9c80e32912-1675719952eeb297ef-0": {
+          "type": "image",
+          "settings": {
+            "top_subheading": "",
+            "title": "LEGAL",
+            "title_size": 50,
+            "subheading": "",
+            "chat_widget": false,
+            "link": "",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "rgba(0,0,0,0)",
+            "text_color": "#000000",
+            "text_align": "vertical-center horizontal-center",
+            "image": "shopify:\/\/shop_images\/Penji_banner_modified.jpg",
+            "overlay_opacity": 0,
+            "focal_point": "20% 50%"
+          }
+        }
+      },
+      "block_order": [
+        "template--14856597438531__657f9cde-4112-4088-8db3-fe9c80e32912-1675719952eeb297ef-0"
+      ],
+      "settings": {
+        "section_height": "375px",
+        "mobile_height": "300px",
+        "parallax": false,
+        "style": "bars",
+        "autoplay": true,
+        "autoplay_speed": 5
+      }
+    },
+    "faq-help": {
+      "type": "faq-help-center",
+      "blocks": {
+        "faq-1": {
+          "type": "question",
+          "settings": {
+            "title": "Privacy Policy",
+            "subheading-1": "Subheading title",
+            "text-1": "<p>Use the text to answer questions</p>",
+            "subheading-2": "",
+            "text-2": "",
+            "subheading-3": "",
+            "text-3": "",
+            "subheading-4": "",
+            "text-4": "",
+            "subheading-5": "",
+            "text-5": "",
+            "subheading-6": "",
+            "text-6": "",
+            "subheading-7": "",
+            "text-7": ""
+          }
+        },
+        "faq-2": {
+          "type": "question",
+          "settings": {
+            "title": "Terms of Service",
+            "subheading-1": "Subheading title",
+            "text-1": "<p>Use the text to answer questions</p>",
+            "subheading-2": "",
+            "text-2": "",
+            "subheading-3": "",
+            "text-3": "",
+            "subheading-4": "",
+            "text-4": "",
+            "subheading-5": "",
+            "text-5": "",
+            "subheading-6": "",
+            "text-6": "",
+            "subheading-7": "",
+            "text-7": ""
+          }
+        }
+      },
+      "block_order": [
+        "faq-1",
+        "faq-2"
+      ],
+      "settings": {
+        "title": "",
+        "contact-help": "Contact Support",
+        "contact-link": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "657f9cde-4112-4088-8db3-fe9c80e32912",
+    "faq-help"
+  ]
+}
