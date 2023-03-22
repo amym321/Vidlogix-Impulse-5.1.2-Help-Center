@@ -1,5 +1,6 @@
 <div
-  class="{% if template == 'page.faq-help-center' %} help-center-banner {% endif %}"
+  class="{% if template == 'page.faq-help-center' %} help-center-banner {% endif %}
+  {% if template == 'page.faq-legal' %} help-center-banner {% endif %}"
   data-section-id="{{ section.id }}"
   data-section-type="slideshow-section"
   {% if section.settings.parallax %}data-parallax="true"{% endif %}>
