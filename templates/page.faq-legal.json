@@ -48,9 +48,9 @@
         "faq-1": {
           "type": "question",
           "settings": {
-            "title": "Privacy Policy",
+            "title": "PRIVACY POLICY",
             "subheading-1": "Subheading title",
-            "text-1": "<p>Use the text to answer questions</p>",
+            "text-1": "<p>Use the text to answer questions<\/p>",
             "subheading-2": "",
             "text-2": "",
             "subheading-3": "",
@@ -68,9 +68,9 @@
         "faq-2": {
           "type": "question",
           "settings": {
-            "title": "Terms of Service",
+            "title": "TERMAS OF SERVICE",
             "subheading-1": "Subheading title",
-            "text-1": "<p>Use the text to answer questions</p>",
+            "text-1": "<p>Use the text to answer questions<\/p>",
             "subheading-2": "",
             "text-2": "",
             "subheading-3": "",
