@@ -43,7 +43,7 @@
       }
     },
     "faq-help": {
-      "type": "faq-help-center",
+      "type": "faq-legal",
       "blocks": {
         "faq-1": {
           "type": "question",
