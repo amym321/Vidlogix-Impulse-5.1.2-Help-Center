@@ -269,8 +269,8 @@
       "settings": {
         "color_background": "#ffffff",
         "color_text": "#1c1d1d",
-        "unsubscribe_text": "",
-        "unsubscribe_url": "shopify:\/\/pages\/contest",
+        "unsubscribe_text": "Privacy Policy",
+        "unsubscribe_url": "https:\/\/vidlogix.com\/pages\/privacy",
         "show_divider": false
       }
     },
