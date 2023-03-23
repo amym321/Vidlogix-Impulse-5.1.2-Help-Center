@@ -64,31 +64,10 @@
             "subheading-7": "Children’s online policy",
             "text-7": "<p>Vidlogix is committed to the preservation of online privacy for all of its web site visitors, including children. Consistent with the Children's Online Privacy Protection Act, we will not knowingly collect any personally identifiable information from children under the age of 13. Vidlogix.com sells products intended for purchase by adults. If you make a purchase on Vidlogix.com, you are representing that you are an adult. If you are a child under the age of 13, you must ask your parent or guardian to assist you in using Vidlogix.com.<\/p>"
           }
-        },
-        "faq-2": {
-          "type": "question",
-          "settings": {
-            "title": "TERMS OF SERVICE",
-            "subheading-1": "Subheading title",
-            "text-1": "<p>Use the text to answer questions<\/p>",
-            "subheading-2": "",
-            "text-2": "",
-            "subheading-3": "",
-            "text-3": "",
-            "subheading-4": "",
-            "text-4": "",
-            "subheading-5": "",
-            "text-5": "",
-            "subheading-6": "",
-            "text-6": "",
-            "subheading-7": "",
-            "text-7": ""
-          }
         }
       },
       "block_order": [
-        "faq-1",
-        "faq-2"
+        "faq-1"
       ],
       "settings": {
         "title": "",
