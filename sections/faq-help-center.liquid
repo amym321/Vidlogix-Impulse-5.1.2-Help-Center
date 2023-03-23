@@ -166,7 +166,7 @@
           </div>
         </div>
 
-      {% render 'help-nav-mobile' %}
+      {% render 'help-nav-mobile', section.blocks: section.blocks, block: block %}
 
       {% comment %} right side - answers {% endcomment %}
         <div id="helpCenterRight" class="help-center-right">
@@ -769,7 +769,7 @@
           {
             "type": "richtext",
             "id": "text-21",
-            "label": "Text Response to Subheading 8",
+            "label": "Text Response to Subheading 21",
             "default": "<p>Use the text to answer questions</p>"
           }
 
