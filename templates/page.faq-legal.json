@@ -64,10 +64,31 @@
             "subheading-7": "Children’s online policy",
             "text-7": "<p>Vidlogix is committed to the preservation of online privacy for all of its web site visitors, including children. Consistent with the Children's Online Privacy Protection Act, we will not knowingly collect any personally identifiable information from children under the age of 13. Vidlogix.com sells products intended for purchase by adults. If you make a purchase on Vidlogix.com, you are representing that you are an adult. If you are a child under the age of 13, you must ask your parent or guardian to assist you in using Vidlogix.com.<\/p>"
           }
+        },
+        "05254014-dd5e-4a48-bbf9-411d68758d74": {
+          "type": "question",
+          "settings": {
+            "title": "Terms of use",
+            "subheading-1": "Contract terms",
+            "text-1": "<p>This website and all pages within this website located at vidlogix.com (this \"Site\") is owned and operated by Vidlogix Labs, Inc. (\"Company\") and provides website features and other products and services to you when you visit, shop or purchase items from this Site, use or access this Site from your mobile devices, or use software. By using Company’s products and services you agree to these conditions. Please read them carefully. You should also carefully review our Privacy Policy before placing an order for goods or services through this site. By placing an order on our site, you are agreeing to an arbitration clause below.<\/p><p>By accessing or using this Site, mobile application or other Company product or service on any computer, mobile phone, tablet, console or other device (collectively, \"Device\"), or by any other means, you acknowledge and agree that you have read, understand and agree to be bound by these Terms and Conditions and by any applicable law.<\/p><p>Company may change these Terms and Conditions at any time without notice. When we make changes, we will post them here. If you do not agree to these Terms and Conditions, please do not use this Site or any Company products or services, and please promptly exit this Site.<\/p>",
+            "subheading-2": "Subheading title",
+            "text-2": "<p>Use the text to answer questions<\/p>",
+            "subheading-3": "Subheading title",
+            "text-3": "<p>Use the text to answer questions<\/p>",
+            "subheading-4": "Subheading title",
+            "text-4": "<p>Use the text to answer questions<\/p>",
+            "subheading-5": "Subheading title",
+            "text-5": "<p>Use the text to answer questions<\/p>",
+            "subheading-6": "Subheading title",
+            "text-6": "<p>Use the text to answer questions<\/p>",
+            "subheading-7": "Subheading title",
+            "text-7": "<p>Use the text to answer questions<\/p>"
+          }
         }
       },
       "block_order": [
-        "faq-1"
+        "faq-1",
+        "05254014-dd5e-4a48-bbf9-411d68758d74"
       ],
       "settings": {
         "title": "",
