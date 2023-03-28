@@ -170,7 +170,7 @@
         "button_link": "shopify:\/\/pages\/about",
         "button_style": "primary",
         "align_text": "left",
-        "button_chat": true,
+        "button_chat": false,
         "button_popup": false,
         "disclaimer": "",
         "background_color": "#57545d",
