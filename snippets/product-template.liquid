@@ -314,7 +314,6 @@
                           {%- render 'quantity-input', form_id: form_id, id: qty_id, qty: 1, min: 1 -%}
                         </div>
                       </div>
-                    </div>
 
                     {%- when 'buy_buttons' -%}
                       <div class="product-block buy-width" {{ block.shopify_attributes }}>
@@ -348,6 +347,7 @@
                           <span>{{ section.settings.value_two }}</span>
                         </div>
                       {% endif %}
+                    </div>
 
                   {%- when 'variant_picker' -%}
                     <div class="product-block" {{ block.shopify_attributes }}>
