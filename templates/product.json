@@ -41,6 +41,21 @@
           "settings": {
           }
         },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "variant_labels": true,
+            "picker_type": "dropdown",
+            "color_swatches": false
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "surface_pickup_enable": false
+          }
+        },
         "separator": {
           "type": "separator",
           "settings": {
@@ -50,14 +65,6 @@
           "type": "description",
           "settings": {
             "is_tab": false
-          }
-        },
-        "variant_picker": {
-          "type": "variant_picker",
-          "settings": {
-            "variant_labels": true,
-            "picker_type": "dropdown",
-            "color_swatches": false
           }
         },
         "inventory_status": {
@@ -74,23 +81,22 @@
           "settings": {
           }
         },
-        "buy_buttons": {
-          "type": "buy_buttons",
+        "22ec2a8a-2dc4-484e-ba20-389141c232b9": {
+          "type": "separator",
           "settings": {
-            "show_dynamic_checkout": false,
-            "surface_pickup_enable": false
           }
         }
       },
       "block_order": [
         "price",
         "loox-rating",
+        "variant_picker",
+        "buy_buttons",
         "separator",
         "description",
-        "variant_picker",
         "inventory_status",
         "a1448bda-730b-4507-8fd1-2b0660b10919",
-        "buy_buttons"
+        "22ec2a8a-2dc4-484e-ba20-389141c232b9"
       ],
       "settings": {
         "sku_enable": true,
