@@ -2,9 +2,9 @@
 
 {%- form 'product', product, id: form_id, class: 'product-single__form ' -%}
 
-  <div class="shopify-payment-terms product__policies" >
+  {% comment %} <div class="shopify-payment-terms product__policies" >
     {{ form | payment_terms }}
-  </div>
+  </div> {% endcomment %}
 
   {%- liquid
     assign enable_dynamic_buttons = false
