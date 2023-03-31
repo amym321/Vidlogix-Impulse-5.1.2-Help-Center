@@ -87,30 +87,13 @@
 
         <div class="grid__item {{ product_description_width }}">
 
-          <div class="product-single__meta">
+          <div class="product-single__meta product-single__container">
             {% comment %} removed 'vendor_handle' code per 4.1.1 customization {% endcomment %}
             <div class="product-block product-block--header">
 
               {%- if isModal -%}
-              {% comment %} begin modified code change per 4.1.1 customization {% endcomment %}
                 <a class="h2 product-single__title" href="{{ product.url }}">{{ product.title }}</a>
-                {% comment %} end code change per 4.1.1 customization {% endcomment %}
               {%- else -%}
-                {% comment %} display values above title on desktop. 4.1.1 mod (modified with Beacon) {% endcomment %}
-                {% comment %} Beacon Help Scout popups - am {% endcomment %}
-                <div class="product-single__values">
-                  {% if section.settings.value_one != '' %}
-                    <span id="product-value-one" class="values-span" style="">
-                      <a href="#" data-beacon-article-modal="630fcf254cde766bbe140fbe">{{ section.settings.value_one }}</a>
-                    </span>
-                  {% endif %}
-                  {% if section.settings.value_two != '' %}
-                    <span id="product-value-two" class="values-span">
-                      <a href="#" data-beacon-article-modal="630fb93890c29a3d732c39e6">{{ section.settings.value_two }}</a>
-                    </span>
-                  {% endif %}
-                </div>
-                 {% comment %} end code change per 4.1.1 customization (modified with Beacon) {% endcomment %}
                 <h1 class="h2 product-single__title">
                   {%- unless product.empty? -%}
                     {{-product.title-}}
@@ -126,6 +109,78 @@
 
 
             </div>
+
+
+
+            {% comment %} begin code change per 4.1.1 customization {% endcomment %}
+            {%- if settings.vendor_enable or section.settings.sku_enable or settings.enable_product_reviews -%}
+
+              {%- if settings.vendor_enable or section.settings.sku_enable -%}
+                <div class="product-single__vendor-sku-reviews">
+                  <div class="product-single__vendor-sku">
+
+                    {%- if settings.vendor_enable -%}
+                      <div class="product-single__vendor">
+                        {%- assign vendor_handle = product.vendor | handleize -%}
+                        {%- if collections[vendor_handle] != empty -%}
+                          <a href="{{ routes.collections_url }}/{{ collections[vendor_handle].handle }}">
+                            {{ collections[vendor_handle].title }}
+                          </a>
+                        {%- else -%}
+                          {{ product.vendor | link_to_vendor }}
+                        {%- endif -%}
+                      </div>
+                    {%- endif -%}
+
+                    {%- if settings.vendor_enable and section.settings.sku_enable -%}<span class="divider">|</span>{%- endif -%}
+
+                    {%- if section.settings.sku_enable -%}
+                      <p data-sku class="product-single__sku">
+                        {%- if current_variant.sku -%}
+                          {{ current_variant.sku }}
+                        {%- endif -%}
+                      </p>
+
+                    {%- endif -%}
+
+                  </div>
+                  {% endif %}
+
+
+                  {%- if settings.enable_product_reviews -%}
+
+                    {% comment %} add Loox Reviews- am{% endcomment %}
+                    <div class="product-single__review-link animate-scroll">
+                      <a href="#reviews">
+                        <div class="loox-rating" data-id="{{ product.id }}" data-rating="{{ product.metafields.loox.avg_rating }}" data-raters="{{ product.metafields.loox.num_reviews }}"></div>
+                      </a>
+                    </div>
+
+                  {%- endif -%}
+
+                </div>
+            {%- endif -%}
+
+
+            {% comment %}  new field added with tooltip - am{% endcomment %}
+            {%- if section.settings.condition_new != '' -%}
+              <p class="condition-new" >
+                {% for variant in product.variants %}
+                  <span class="backorder-wrapper" {% if variant != current_variant %}style="display: none;"{% endif %}>
+                    <span class="tts tts-wrap tooltip-wrapper " aria-label="{{ settings.condition_new_tooltip }}">
+                      <a class="condition-new-desktop" target="_blank" href="/pages\/extended-warranty" >
+                        <span>{{ section.settings.condition_new }}</span>
+                        <img aria-hidden="true" focusable="false" role="presentation" class="icon icon-tooltip tooltip-image" src="{{ settings.backstock_icon | img_url }}">
+                      </a>
+                      <a class="condition-new-mobile">
+                        <span>{{ section.settings.condition_new }}</span>
+                        <img aria-hidden="true" focusable="false" role="presentation" class="icon icon-tooltip tooltip-image" src="{{ settings.backstock_icon | img_url }}">
+                      </a>
+                    </span>
+                  </span>
+                {% endfor %}
+              </p>
+            {%- endif -%}
             
 
             <div data-product-blocks>
@@ -238,76 +293,17 @@
                         <span data-unit-price>{{ current_variant.unit_price | money }}</span>/{{ unit_price_base_unit }}
                       </div>
 
-                    {% comment %} begin code change per 4.1.1 customization {% endcomment %}
-                    {%- if settings.vendor_enable or section.settings.sku_enable or settings.enable_product_reviews -%}
-
-                    {%- if settings.vendor_enable or section.settings.sku_enable -%}
-                      <div class="product-single__vendor-sku-reviews">
-                        <div class="product-single__vendor-sku">
-        
-                          {%- if settings.vendor_enable -%}
-                            <div class="product-single__vendor">
-                              {%- assign vendor_handle = product.vendor | handleize -%}
-                              {%- if collections[vendor_handle] != empty -%}
-                                <a href="{{ routes.collections_url }}/{{ collections[vendor_handle].handle }}">
-                                  {{ collections[vendor_handle].title }}
-                                </a>
-                              {%- else -%}
-                                {{ product.vendor | link_to_vendor }}
-                              {%- endif -%}
-                            </div>
-                          {%- endif -%}
-
-                          {%- if settings.vendor_enable and section.settings.sku_enable -%}<span class="divider">|</span>{%- endif -%}
-
-                          {%- if section.settings.sku_enable -%}
-                            <p data-sku class="product-single__sku">
-                              {%- if current_variant.sku -%}
-                                {{ current_variant.sku }}
-                              {%- endif -%}
-                            </p>
-
-                          {%- endif -%}
-
-                        </div>
-                        {% endif %}
-
-
-                        {%- if settings.enable_product_reviews -%}
-
-                          {% comment %} add Loox Reviews- am{% endcomment %}
-                          <div class="product-single__review-link animate-scroll">
-                            <a href="#reviews">
-                              <div class="loox-rating" data-id="{{ product.id }}" data-rating="{{ product.metafields.loox.avg_rating }}" data-raters="{{ product.metafields.loox.num_reviews }}"></div>
-                            </a>
-                          </div>
-        
-                        {%- endif -%}
-
+                      {% comment %} Paypal messaging - am {% endcomment %}
+                      <div class="paypal-link" 
+                        data-pp-message
+                        data-pp-style-layout="text"
+                        data-pp-style-logo-type="alternative"
+                        data-pp-style-text-color="black"
+                        data-pp-amount="$50.00"> {% comment %} placeholder value {% endcomment %}
                       </div>
-                    {%- endif -%}
 
-                    {% comment %}  new field added with tooltip - am{% endcomment %}
-                    {%- if section.settings.condition_new != '' -%}
-                      <p class="condition-new" style="width:100%;">
-                        {% for variant in product.variants %}
-                          <span class="backorder-wrapper" {% if variant != current_variant %}style="display: none;"{% endif %}>
-                            <span class="tts tts-wrap tooltip-wrapper " aria-label="{{ settings.condition_new_tooltip }}">
-                              <a class="condition-new-desktop" target="_blank" href="/pages\/extended-warranty" >
-                                <span>{{ section.settings.condition_new }}</span>
-                                <img aria-hidden="true" focusable="false" role="presentation" class="icon icon-tooltip tooltip-image" src="{{ settings.backstock_icon | img_url }}">
-                              </a>
-                              <a class="condition-new-mobile">
-                                <span>{{ section.settings.condition_new }}</span>
-                                <img aria-hidden="true" focusable="false" role="presentation" class="icon icon-tooltip tooltip-image" src="{{ settings.backstock_icon | img_url }}">
-                              </a>
-                            </span>
-                          </span>
-                        {% endfor %}
-                      </p>
-                    {%- endif -%}
 
-                  </div>
+                    </div>
 
                   {%- when 'quantity_selector' -%}
                     <div class="product__quantity-cart">
@@ -318,11 +314,12 @@
                           {%- render 'quantity-input', form_id: form_id, id: qty_id, qty: 1, min: 1 -%}
                         </div>
                       </div>
+                    </div>
 
                     {%- when 'buy_buttons' -%}
                       <div class="product-block buy-width" {{ block.shopify_attributes }}>
                         {%- unless product.empty? -%}
-                            <div class="product-block ">
+                            <div class="product-block atc-block">
                               {%- render 'product-form',
                                 form_id: form_id,
                                 product: product,
@@ -339,6 +336,10 @@
                             ></div>
                         {%- endif -%}
                       </div>
+                      
+                      {% comment %} begin code change per 4.1.1 customization {% endcomment %}
+                      {%- render 'variant-messaging', product: product, current_variant: current_variant -%}
+                      {% comment %} end code change per 4.1.1 customization {% endcomment %}
 
                       {% comment %} display values after Buy button & other blocks on mobile but not quickview. 4.1.1 mod {% endcomment %}
                       {% if isModal %}
@@ -347,7 +348,6 @@
                           <span>{{ section.settings.value_two }}</span>
                         </div>
                       {% endif %}
-                    </div>
 
                   {%- when 'variant_picker' -%}
                     <div class="product-block" {{ block.shopify_attributes }}>
@@ -472,11 +472,24 @@
                 </div>
               {%- endfor -%}
 
-              {% comment %} begin code change per 4.1.1 customization {% endcomment %}
-              {%- render 'variant-messaging', product: product, current_variant: current_variant -%}
-              {% comment %} end code change per 4.1.1 customization {% endcomment %}
-
             </div>
+
+            {% comment %} display values on desktop. 4.1.1 mod (modified with Beacon) {% endcomment %}
+            {% comment %} Beacon Help Scout popups - am {% endcomment %}
+            <div class="product-single__values product-single__meta">
+              {% if section.settings.value_one != '' %}
+                <span id="product-value-one" class="values-span" style="">
+                  <a href="#" data-beacon-article-modal="630fcf254cde766bbe140fbe">{{ section.settings.value_one }}</a>
+                </span>
+              {% endif %}
+              {% if section.settings.value_two != '' %}
+                <span id="product-value-two" class="values-span">
+                  <a href="#" data-beacon-article-modal="630fb93890c29a3d732c39e6">{{ section.settings.value_two }}</a>
+                </span>
+              {% endif %}
+            </div>
+            {% comment %} end code change per 4.1.1 customization (modified with Beacon) {% endcomment %}
+
           </div>
         </div>
 
@@ -611,7 +624,7 @@
             <div class="container">
               <div class="content rte">
                 {{ shop.metafields.accentuate.lifetime_support_message }}
-                <a target="_blank" href="/pages/tech-support" class="more-link">GET HELP</a>
+                {% comment %} <a target="_blank" href="/pages/tech-support" class="more-link">GET HELP</a> {% endcomment %}
               </div>
             </div>
           {% endunless %}
@@ -630,7 +643,8 @@
                   <div data-section-id="4389426856003" data-subsection data-section-type="collection-template">
                   {{ shop.metafields.accentuate.protection_plan_message }}
                   <span class="btn protection-plan__btn quick-product__btn js-modal-open-quick-modal-{{ prod.id }}">Add Plan</span>
-                  <a target="_blank" href="/pages/protection-plans" class="more-link">Learn More</a>
+                  {% comment %} <a target="_blank" href="/pages/protection-plans" class="more-link">Learn More</a> {% endcomment %}
+                  <a target="_blank" href="/products/vidlogix-product-protection-plans" class="more-link">Learn More</a>
 
                   {%- if prod.options.size > 0 -%}
                     {%- render 'quick-shop-modal', product: prod -%}

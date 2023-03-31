@@ -11276,6 +11276,13 @@ html[dir=rtl] .product-single__meta .rte{
 .product-single__vendor-sku-reviews {
   margin: 5px 0;
 }
+@media screen and (max-width: 768px) {
+  .product-single__vendor-sku-reviews {
+    margin-left: auto;
+    margin-right: auto;
+    /* width: 280px; */
+  }
+}
 /*  code change per 4.1.1 customization */
 .product-single__vendor-sku-reviews .divider {
   color: var(--colorTextSecondary);
@@ -12973,19 +12980,27 @@ button#dummy-chat-button.chat-toggle {
 
 .condition-new {
   font-size: .9rem;
-  text-align: left !important;
-  margin:0 0 15px !important;
+  text-align: left;
+  margin:0 0 15px;
 }
 
 @media only screen and (min-width: 769px) {
   .condition-new-mobile {
     display:none !important;
   }
+  .condition-new {
+    width:100%;
+  }
 }
 
 @media only screen and (max-width: 768px) {
   .condition-new-desktop {
     display:none !important;
+  }
+  .condition-new {
+    margin-right: auto;
+    margin-left: auto;
+    /* width: 135px; */
   }
 }
 
@@ -13192,3 +13207,25 @@ button#dummy-chat-button.chat-toggle {
   }
 }
 
+
+.paypal-link {
+  padding-top:8px;
+  padding-bottom:8px;
+}
+@media (max-width:768px) {
+  .paypal-link {
+    margin-left: auto;
+    width: 180px;
+    margin-right: auto;
+  }
+}
+
+.atc-block {
+  margin-bottom: 18px;
+}
+
+@media (min-width:769px) {
+.product-single__container {
+  transform: translateY(-12px);
+}
+}
