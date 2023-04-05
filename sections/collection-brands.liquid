@@ -46,7 +46,7 @@
                     {% if collection.title == blank %}
                       {{ 'homepage.onboarding.collection_title' | t }}
                     {% else %}
-                      {{ collection.title }}
+                      {{ collection.title | remove: "Authorized Dealer" }}
                     {% endif %}
                   </div>
                   </div>
