@@ -80,7 +80,7 @@
     "cart_notes_enable": false,
     "cart_terms_conditions_enable": false,
     "cart_terms_conditions_link": "https:\/\/vidlogix.com\/pages\/shipping",
-    "cart_additional_text": "<p><strong>The shipping address must match the credit card's address. <\/strong>We don't ship to UPS\/USPS. Orders $500+ require a signature.<\/p>",
+    "cart_additional_text": "<p><strong>Please use PayPal if shipping to an address other than the credit card's registered address. <\/strong>We don't ship to UPS\/USPS. Orders $500+ require a signature.<\/p>",
     "free_ship_amount": "49.00",
     "social_facebook_link": "https:\/\/www.facebook.com\/vidlogixhq\/",
     "social_instagram_link": "https:\/\/www.instagram.com\/vidlogix\/",
