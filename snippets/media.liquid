@@ -88,6 +88,13 @@
 
   <div data-product-image-main class="product-image-main">
 
+    {% comment %} sale tag on pdp main image - am {% endcomment %}
+    {%- if product.compare_at_price > product.price and product.available -%}
+    <div class="grid-product__tag grid-product__tag--sale">
+      {{ 'products.general.sale' | t }}
+    </div>
+    {%- endif -%}
+
     {%- if media.media_type == 'model' -%}
       {%- liquid
         if media.preview_image.aspect_ratio
