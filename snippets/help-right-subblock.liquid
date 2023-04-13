@@ -5,7 +5,7 @@
   {% assign prefix = "L" %}
 {% endif %}
 
-<div class="faq-section">
+<div class="{% if sub_hide %} hide {% endif %} faq-section">
   <button style="padding: 11px 0 30px;" type="button" class="sub-block collapsible-trigger collapsible-trigger--inline collapsible--auto-height text-left"  aria-controls="{{prefix}}-{{ block_id }}-{{sub_block}}">
     {%- render 'collapsible-icons-alt', no_circle: true -%}
     <h3 style="margin-top: 0; margin-bottom: 0;"><span>{{ sub_heading}}</span></h3>

@@ -45,109 +45,109 @@
                             itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
                           <div style="padding-top:0;" class="collapsible-content__inner collapsible-content__inner--faq rte" itemprop="text">
                             {% if block.settings.subheading-1 != empty %}
-                              <button  type="button" class="sub-block left-sub-trigger collapsible-right-trigger collapsible-trigger collapsible-trigger--inline collapsible--auto-height text-left" 
+                              <button  type="button" class="{% if block.settings.hide-1 %} hide {% endif %} sub-block left-sub-trigger collapsible-right-trigger collapsible-trigger collapsible-trigger--inline collapsible--auto-height text-left" 
                                 aria-controls="{{prefix}}-{{ block.id }}-1">
                                 <h4 class="rte"><a itemprop="name" class="subheading-left" ><span>{{ block.settings.subheading-1 }}</span></a></h4>
                               </button>
                             {% endif %}
                             {% if block.settings.subheading-2 != empty %}
-                              <button  type="button" class="sub-block collapsible-trigger collapsible-trigger--inline collapsible--auto-height text-left" aria-controls="{{prefix}}-{{ block.id }}-2">
+                              <button  type="button" class="{% if block.settings.hide-2 %} hide {% endif %} sub-block collapsible-trigger collapsible-trigger--inline collapsible--auto-height text-left" aria-controls="{{prefix}}-{{ block.id }}-2">
                                 <h4 class="rte"><a itemprop="name" class="subheading-left" ><span>{{ block.settings.subheading-2 }}</span></a></h4>
                               </button>
                             {% endif %}
                             {% if block.settings.subheading-3 != empty %}
-                              <button  type="button" class="sub-block collapsible-trigger collapsible-trigger--inline collapsible--auto-height text-left" aria-controls="{{prefix}}-{{ block.id }}-3">
+                              <button  type="button" class="{% if block.settings.hide-3 %} hide {% endif %} sub-block collapsible-trigger collapsible-trigger--inline collapsible--auto-height text-left" aria-controls="{{prefix}}-{{ block.id }}-3">
                                 <h4 class="rte"><a itemprop="name" class="subheading-left" ><span>{{ block.settings.subheading-3 }}</span></a></h4>
                               </button>
                             {% endif %}
                             {% if block.settings.subheading-4 != empty %}
-                              <button  type="button" class="sub-block collapsible-trigger collapsible-trigger--inline collapsible--auto-height text-left" aria-controls="{{prefix}}-{{ block.id }}-4">
+                              <button  type="button" class="{% if block.settings.hide-4 %} hide {% endif %} sub-block collapsible-trigger collapsible-trigger--inline collapsible--auto-height text-left" aria-controls="{{prefix}}-{{ block.id }}-4">
                                 <h4 class="rte"><a itemprop="name" class="subheading-left" ><span>{{ block.settings.subheading-4 }}</span></a></h4>
                               </button>
                             {% endif %} 
                             {% if block.settings.subheading-5 != empty %}
-                              <button  type="button" class="sub-block collapsible-trigger collapsible-trigger--inline collapsible--auto-height text-left" aria-controls="{{prefix}}-{{ block.id }}-5">
+                              <button  type="button" class="{% if block.settings.hide-5 %} hide {% endif %} sub-block collapsible-trigger collapsible-trigger--inline collapsible--auto-height text-left" aria-controls="{{prefix}}-{{ block.id }}-5">
                                 <h4 class="rte"><a itemprop="name" class="subheading-left" ><span>{{ block.settings.subheading-5 }}</span></a></h4>
                               </button>
                             {% endif %}
                             {% if block.settings.subheading-6 != empty %}
-                              <button  type="button" class="sub-block collapsible-trigger collapsible-trigger--inline collapsible--auto-height text-left" aria-controls="{{prefix}}-{{ block.id }}-6">
+                              <button  type="button" class="{% if block.settings.hide-6 %} hide {% endif %}v sub-block collapsible-trigger collapsible-trigger--inline collapsible--auto-height text-left" aria-controls="{{prefix}}-{{ block.id }}-6">
                                 <h4 class="rte"><a itemprop="name" class="subheading-left" ><span>{{ block.settings.subheading-6 }}</span></a></h4>
                               </button>
                             {% endif %} 
                             {% if block.settings.subheading-7 != empty %}
-                              <button  type="button" class="sub-block collapsible-trigger collapsible-trigger--inline collapsible--auto-height text-left" aria-controls="{{prefix}}-{{ block.id }}-7">
+                              <button  type="button" class="{% if block.settings.hide-7 %} hide {% endif %} sub-block collapsible-trigger collapsible-trigger--inline collapsible--auto-height text-left" aria-controls="{{prefix}}-{{ block.id }}-7">
                                 <h4 class="rte"><a itemprop="name" class="subheading-left" ><span>{{ block.settings.subheading-7 }}</span></a></h4>
                               </button>
                             {% endif %}
                             {% if block.settings.subheading-8 != empty %}
-                              <button  type="button" class="sub-block collapsible-trigger collapsible-trigger--inline collapsible--auto-height text-left" aria-controls="{{prefix}}-{{ block.id }}-8">
+                              <button  type="button" class="{% if block.settings.hide-8 %} hide {% endif %} sub-block collapsible-trigger collapsible-trigger--inline collapsible--auto-height text-left" aria-controls="{{prefix}}-{{ block.id }}-8">
                                 <h4 class="rte"><a itemprop="name" class="subheading-left" ><span>{{ block.settings.subheading-8 }}</span></a></h4>
                               </button>
                             {% endif %}
 
                             {% if block.settings.subheading-9 != empty %}
-                              <button  type="button" class="sub-block collapsible-trigger collapsible-trigger--inline collapsible--auto-height text-left" aria-controls="{{prefix}}-{{ block.id }}-9">
+                              <button  type="button" class="{% if block.settings.hide-9 %} hide {% endif %} sub-block collapsible-trigger collapsible-trigger--inline collapsible--auto-height text-left" aria-controls="{{prefix}}-{{ block.id }}-9">
                                 <h4 class="rte"><a itemprop="name" class="subheading-left" ><span>{{ block.settings.subheading-9 }}</span></a></h4>
                               </button>
                             {% endif %}
                             {% if block.settings.subheading-10 != empty %}
-                              <button  type="button" class="sub-block collapsible-trigger collapsible-trigger--inline collapsible--auto-height text-left" aria-controls="{{prefix}}-{{ block.id }}-10">
+                              <button  type="button" class="{% if block.settings.hide-10 %} hide {% endif %} sub-block collapsible-trigger collapsible-trigger--inline collapsible--auto-height text-left" aria-controls="{{prefix}}-{{ block.id }}-10">
                                 <h4 class="rte"><a itemprop="name" class="subheading-left" ><span>{{ block.settings.subheading-10 }}</span></a></h4>
                               </button>
                             {% endif %}
                             {% if block.settings.subheading-11 != empty %}
-                              <button  type="button" class="sub-block collapsible-trigger collapsible-trigger--inline collapsible--auto-height text-left" aria-controls="{{prefix}}-{{ block.id }}-11">
+                              <button  type="button" class="{% if block.settings.hide-11 %} hide {% endif %} sub-block collapsible-trigger collapsible-trigger--inline collapsible--auto-height text-left" aria-controls="{{prefix}}-{{ block.id }}-11">
                                 <h4 class="rte"><a itemprop="name" class="subheading-left" ><span>{{ block.settings.subheading-11 }}</span></a></h4>
                               </button>
                             {% endif %}
                             {% if block.settings.subheading-12 != empty %}
-                              <button  type="button" class="sub-block collapsible-trigger collapsible-trigger--inline collapsible--auto-height text-left" aria-controls="{{prefix}}-{{ block.id }}-12">
+                              <button  type="button" class="{% if block.settings.hide-12 %} hide {% endif %} sub-block collapsible-trigger collapsible-trigger--inline collapsible--auto-height text-left" aria-controls="{{prefix}}-{{ block.id }}-12">
                                 <h4 class="rte"><a itemprop="name" class="subheading-left" ><span>{{ block.settings.subheading-12 }}</span></a></h4>
                               </button>
                             {% endif %}
                             {% if block.settings.subheading-13 != empty %}
-                              <button  type="button" class="sub-block collapsible-trigger collapsible-trigger--inline collapsible--auto-height text-left" aria-controls="{{prefix}}-{{ block.id }}-13">
+                              <button  type="button" class="{% if block.settings.hide-13 %} hide {% endif %} sub-block collapsible-trigger collapsible-trigger--inline collapsible--auto-height text-left" aria-controls="{{prefix}}-{{ block.id }}-13">
                                 <h4 class="rte"><a itemprop="name" class="subheading-left" ><span>{{ block.settings.subheading-13 }}</span></a></h4>
                               </button>
                             {% endif %}
                             {% if block.settings.subheading-14 != empty %}
-                              <button  type="button" class="sub-block collapsible-trigger collapsible-trigger--inline collapsible--auto-height text-left" aria-controls="{{prefix}}-{{ block.id }}-14">
+                              <button  type="button" class="{% if block.settings.hide-14 %} hide {% endif %} sub-block collapsible-trigger collapsible-trigger--inline collapsible--auto-height text-left" aria-controls="{{prefix}}-{{ block.id }}-14">
                                 <h4 class="rte"><a itemprop="name" class="subheading-left" ><span>{{ block.settings.subheading-14 }}</span></a></h4>
                               </button>
                             {% endif %}
                             {% if block.settings.subheading-15 != empty %}
-                              <button  type="button" class="sub-block collapsible-trigger collapsible-trigger--inline collapsible--auto-height text-left" aria-controls="{{prefix}}-{{ block.id }}-15">
+                              <button  type="button" class="{% if block.settings.hide-15 %} hide {% endif %} sub-block collapsible-trigger collapsible-trigger--inline collapsible--auto-height text-left" aria-controls="{{prefix}}-{{ block.id }}-15">
                                 <h4 class="rte"><a itemprop="name" class="subheading-left" ><span>{{ block.settings.subheading-15 }}</span></a></h4>
                               </button>
                             {% endif %}
                             {% if block.settings.subheading-16 != empty %}
-                              <button  type="button" class="sub-block collapsible-trigger collapsible-trigger--inline collapsible--auto-height text-left" aria-controls="{{prefix}}-{{ block.id }}-16">
+                              <button  type="button" class="{% if block.settings.hide-16 %} hide {% endif %} sub-block collapsible-trigger collapsible-trigger--inline collapsible--auto-height text-left" aria-controls="{{prefix}}-{{ block.id }}-16">
                                 <h4 class="rte"><a itemprop="name" class="subheading-left" ><span>{{ block.settings.subheading-16 }}</span></a></h4>
                               </button>
                             {% endif %}
                             {% if block.settings.subheading-17 != empty %}
-                              <button  type="button" class="sub-block collapsible-trigger collapsible-trigger--inline collapsible--auto-height text-left" aria-controls="{{prefix}}-{{ block.id }}-17">
+                              <button  type="button" class="{% if block.settings.hide-17 %} hide {% endif %} sub-block collapsible-trigger collapsible-trigger--inline collapsible--auto-height text-left" aria-controls="{{prefix}}-{{ block.id }}-17">
                                 <h4 class="rte"><a itemprop="name" class="subheading-left" ><span>{{ block.settings.subheading-17 }}</span></a></h4>
                               </button>
                             {% endif %}
                             {% if block.settings.subheading-18 != empty %}
-                              <button  type="button" class="sub-block collapsible-trigger collapsible-trigger--inline collapsible--auto-height text-left" aria-controls="{{prefix}}-{{ block.id }}-18">
+                              <button  type="button" class="{% if block.settings.hide-18 %} hide {% endif %} sub-block collapsible-trigger collapsible-trigger--inline collapsible--auto-height text-left" aria-controls="{{prefix}}-{{ block.id }}-18">
                                 <h4 class="rte"><a itemprop="name" class="subheading-left" ><span>{{ block.settings.subheading-18 }}</span></a></h4>
                               </button>
                             {% endif %}
                             {% if block.settings.subheading-19 != empty %}
-                              <button  type="button" class="sub-block collapsible-trigger collapsible-trigger--inline collapsible--auto-height text-left" aria-controls="{{prefix}}-{{ block.id }}-19">
+                              <button  type="button" class="{% if block.settings.hide-19 %} hide {% endif %} sub-block collapsible-trigger collapsible-trigger--inline collapsible--auto-height text-left" aria-controls="{{prefix}}-{{ block.id }}-19">
                                 <h4 class="rte"><a itemprop="name" class="subheading-left" ><span>{{ block.settings.subheading-19 }}</span></a></h4>
                               </button>
                             {% endif %}
                             {% if block.settings.subheading-20 != empty %}
-                              <button  type="button" class="sub-block collapsible-trigger collapsible-trigger--inline collapsible--auto-height text-left" aria-controls="{{prefix}}-{{ block.id }}-20">
+                              <button  type="button" class="{% if block.settings.hide-20 %} hide {% endif %} sub-block collapsible-trigger collapsible-trigger--inline collapsible--auto-height text-left" aria-controls="{{prefix}}-{{ block.id }}-20">
                                 <h4 class="rte"><a itemprop="name" class="subheading-left" ><span>{{ block.settings.subheading-20 }}</span></a></h4>
                               </button>
                             {% endif %}
                             {% if block.settings.subheading-21 != empty %}
-                              <button  type="button" class="sub-block collapsible-trigger collapsible-trigger--inline collapsible--auto-height text-left" aria-controls="{{prefix}}-{{ block.id }}-21">
+                              <button  type="button" class="{% if block.settings.hide-21 %} hide {% endif %} sub-block collapsible-trigger collapsible-trigger--inline collapsible--auto-height text-left" aria-controls="{{prefix}}-{{ block.id }}-21">
                                 <h4 class="rte"><a itemprop="name" class="subheading-left" ><span>{{ block.settings.subheading-21 }}</span></a></h4>
                               </button>
                             {% endif %}
@@ -182,67 +182,67 @@
                         <div class="faq-right-{{ block.id }}" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
                             <div class=" collapsible-content__inner collapsible-content__inner--faq rte" itemprop="text">
                               {% if block.settings.subheading-1 != empty %}
-                                {% render 'help-right-subblock', block_id: block.id, sub_block: '1', sub_text: block.settings.text-1, sub_heading: block.settings.subheading-1  %}
+                                {% render 'help-right-subblock', block_id: block.id, sub_block: '1', sub_text: block.settings.text-1, sub_heading: block.settings.subheading-1, sub_hide: block.settings.hide-1  %}
                               {% endif %}
                               {% if block.settings.subheading-2 != empty  %}
-                                {% render 'help-right-subblock', block_id: block.id, sub_block: '2', sub_text: block.settings.text-2, sub_heading: block.settings.subheading-2 %}
+                                {% render 'help-right-subblock', block_id: block.id, sub_block: '2', sub_text: block.settings.text-2, sub_heading: block.settings.subheading-2, sub_hide: block.settings.hide-2  %}
                               {% endif %}
                               {% if block.settings.subheading-3 != empty %}
-                                {% render 'help-right-subblock', block_id: block.id, sub_block: '3', sub_text: block.settings.text-3, sub_heading: block.settings.subheading-3 %}
+                                {% render 'help-right-subblock', block_id: block.id, sub_block: '3', sub_text: block.settings.text-3, sub_heading: block.settings.subheading-3, sub_hide: block.settings.hide-3  %}
                               {% endif %}
                               {% if block.settings.subheading-4 != empty  %}
-                                {% render 'help-right-subblock', block_id: block.id, sub_block: '4', sub_text: block.settings.text-4, sub_heading: block.settings.subheading-4 %}
+                                {% render 'help-right-subblock', block_id: block.id, sub_block: '4', sub_text: block.settings.text-4, sub_heading: block.settings.subheading-4, sub_hide: block.settings.hide-4  %}
                               {% endif %}
                               {% if block.settings.subheading-5 != empty  %}
-                                {% render 'help-right-subblock', block_id: block.id, sub_block: '5', sub_text: block.settings.text-5, sub_heading: block.settings.subheading-5 %}
+                                {% render 'help-right-subblock', block_id: block.id, sub_block: '5', sub_text: block.settings.text-5, sub_heading: block.settings.subheading-5, sub_hide: block.settings.hide-5  %}
                               {% endif %}
                               {% if block.settings.subheading-6 != empty %}
-                                {% render 'help-right-subblock', block_id: block.id, sub_block: '6', sub_text: block.settings.text-6, sub_heading: block.settings.subheading-6 %}
+                                {% render 'help-right-subblock', block_id: block.id, sub_block: '6', sub_text: block.settings.text-6, sub_heading: block.settings.subheading-6, sub_hide: block.settings.hide-6  %}
                               {% endif %}
                               {% if block.settings.subheading-7 != empty  %}
-                                {% render 'help-right-subblock', block_id: block.id, sub_block: '7', sub_text: block.settings.text-7, sub_heading: block.settings.subheading-7 %}
+                                {% render 'help-right-subblock', block_id: block.id, sub_block: '7', sub_text: block.settings.text-7, sub_heading: block.settings.subheading-7, sub_hide: block.settings.hide-7  %}
                               {% endif %}
                               {% if block.settings.subheading-8 != empty  %}
-                                {% render 'help-right-subblock', block_id: block.id, sub_block: '8', sub_text: block.settings.text-8, sub_heading: block.settings.subheading-8 %}
+                                {% render 'help-right-subblock', block_id: block.id, sub_block: '8', sub_text: block.settings.text-8, sub_heading: block.settings.subheading-8, sub_hide: block.settings.hide-8  %}
                               {% endif %}
                               {% if block.settings.subheading-9 != empty  %}
-                                {% render 'help-right-subblock', block_id: block.id, sub_block: '9', sub_text: block.settings.text-9, sub_heading: block.settings.subheading-9 %}
+                                {% render 'help-right-subblock', block_id: block.id, sub_block: '9', sub_text: block.settings.text-9, sub_heading: block.settings.subheading-9, sub_hide: block.settings.hide-9  %}
                               {% endif %}
                               {% if block.settings.subheading-10 != empty  %}
-                                {% render 'help-right-subblock', block_id: block.id, sub_block: '10', sub_text: block.settings.text-10, sub_heading: block.settings.subheading-10 %}
+                                {% render 'help-right-subblock', block_id: block.id, sub_block: '10', sub_text: block.settings.text-10, sub_heading: block.settings.subheading-10, sub_hide: block.settings.hide-10  %}
                               {% endif %}
                               {% if block.settings.subheading-11 != empty  %}
-                                {% render 'help-right-subblock', block_id: block.id, sub_block: '11', sub_text: block.settings.text-11, sub_heading: block.settings.subheading-11 %}
+                                {% render 'help-right-subblock', block_id: block.id, sub_block: '11', sub_text: block.settings.text-11, sub_heading: block.settings.subheading-11, sub_hide: block.settings.hide-11  %}
                               {% endif %}
                               {% if block.settings.subheading-12 != empty  %}
-                                {% render 'help-right-subblock', block_id: block.id, sub_block: '12', sub_text: block.settings.text-12, sub_heading: block.settings.subheading-12 %}
+                                {% render 'help-right-subblock', block_id: block.id, sub_block: '12', sub_text: block.settings.text-12, sub_heading: block.settings.subheading-12 , sub_hide: block.settings.hide-12  %}
                               {% endif %}
                               {% if block.settings.subheading-13 != empty  %}
-                                {% render 'help-right-subblock', block_id: block.id, sub_block: '13', sub_text: block.settings.text-13, sub_heading: block.settings.subheading-13 %}
+                                {% render 'help-right-subblock', block_id: block.id, sub_block: '13', sub_text: block.settings.text-13, sub_heading: block.settings.subheading-13, sub_hide: block.settings.hide-13  %}
                               {% endif %}
                               {% if block.settings.subheading-14 != empty  %}
-                                {% render 'help-right-subblock', block_id: block.id, sub_block: '14', sub_text: block.settings.text-14, sub_heading: block.settings.subheading-14 %}
+                                {% render 'help-right-subblock', block_id: block.id, sub_block: '14', sub_text: block.settings.text-14, sub_heading: block.settings.subheading-14, sub_hide: block.settings.hide-14  %}
                               {% endif %}
                               {% if block.settings.subheading-15 != empty  %}
-                                {% render 'help-right-subblock', block_id: block.id, sub_block: '15', sub_text: block.settings.text-15, sub_heading: block.settings.subheading-15 %}
+                                {% render 'help-right-subblock', block_id: block.id, sub_block: '15', sub_text: block.settings.text-15, sub_heading: block.settings.subheading-15, sub_hide: block.settings.hide-15  %}
                               {% endif %}
                               {% if block.settings.subheading-16 != empty  %}
-                                {% render 'help-right-subblock', block_id: block.id, sub_block: '16', sub_text: block.settings.text-16, sub_heading: block.settings.subheading-16 %}
+                                {% render 'help-right-subblock', block_id: block.id, sub_block: '16', sub_text: block.settings.text-16, sub_heading: block.settings.subheading-16, sub_hide: block.settings.hide-16  %}
                               {% endif %}
                               {% if block.settings.subheading-17 != empty  %}
-                                {% render 'help-right-subblock', block_id: block.id, sub_block: '17', sub_text: block.settings.text-17, sub_heading: block.settings.subheading-17 %}
+                                {% render 'help-right-subblock', block_id: block.id, sub_block: '17', sub_text: block.settings.text-17, sub_heading: block.settings.subheading-17, sub_hide: block.settings.hide-17  %}
                               {% endif %}
                               {% if block.settings.subheading-18 != empty  %}
-                                {% render 'help-right-subblock', block_id: block.id, sub_block: '18', sub_text: block.settings.text-18, sub_heading: block.settings.subheading-18 %}
+                                {% render 'help-right-subblock', block_id: block.id, sub_block: '18', sub_text: block.settings.text-18, sub_heading: block.settings.subheading-18, sub_hide: block.settings.hide-18  %}
                               {% endif %}
                               {% if block.settings.subheading-19 != empty  %}
-                                {% render 'help-right-subblock', block_id: block.id, sub_block: '19', sub_text: block.settings.text-19, sub_heading: block.settings.subheading-19 %}
+                                {% render 'help-right-subblock', block_id: block.id, sub_block: '19', sub_text: block.settings.text-19, sub_heading: block.settings.subheading-19, sub_hide: block.settings.hide-19  %}
                               {% endif %}
                               {% if block.settings.subheading-20 != empty  %}
-                                {% render 'help-right-subblock', block_id: block.id, sub_block: '20', sub_text: block.settings.text-20, sub_heading: block.settings.subheading-20 %}
+                                {% render 'help-right-subblock', block_id: block.id, sub_block: '20', sub_text: block.settings.text-20, sub_heading: block.settings.subheading-20, sub_hide: block.settings.hide-20  %}
                               {% endif %}
                               {% if block.settings.subheading-21 != empty  %}
-                                {% render 'help-right-subblock', block_id: block.id, sub_block: '21', sub_text: block.settings.text-21, sub_heading: block.settings.subheading-21 %}
+                                {% render 'help-right-subblock', block_id: block.id, sub_block: '21', sub_text: block.settings.text-21, sub_heading: block.settings.subheading-21, sub_hide: block.settings.hide-21  %}
                               {% endif %}
                             </div>
                         </div>
@@ -521,9 +521,19 @@
             "info": "Headings are the 1st level."
           },
           {
+            "type": "header",
+            "content": "Subheading 1"
+          },
+          {
+            "type": "checkbox",
+            "id": "hide-1",
+            "label": "Hide Subheading 1",
+            "default": false
+          },
+          {
             "type": "text",
             "id": "subheading-1",
-            "label": "Subheading 1",
+            "label": "Subheading 1 title",
             "default": "Subheading title",
             "info": "Subheadings are the indented 2nd level within a Heading."
           },
@@ -534,9 +544,19 @@
             "default": "<p>Use the text to answer questions</p>"
           },
           {
+            "type": "header",
+            "content": "Subheading 2"
+          },
+          {
+            "type": "checkbox",
+            "id": "hide-2",
+            "label": "Hide Subheading 2",
+            "default": false
+          },
+          {
             "type": "text",
             "id": "subheading-2",
-            "label": "Subheading 2",
+            "label": "Subheading 2 title",
             "default": "Subheading title"
           },
           {
@@ -546,9 +566,19 @@
             "default": "<p>Use the text to answer questions</p>"
           },
           {
+            "type": "header",
+            "content": "Subheading 3"
+          },
+          {
+            "type": "checkbox",
+            "id": "hide-3",
+            "label": "Hide Subheading 3",
+            "default": false
+          },
+          {
             "type": "text",
             "id": "subheading-3",
-            "label": "Subheading 3",
+            "label": "Subheading 3 title",
             "default": "Subheading title"
           },
           {
@@ -558,9 +588,19 @@
             "default": "<p>Use the text to answer questions</p>"
           },
           {
+            "type": "header",
+            "content": "Subheading 4"
+          },
+          {
+            "type": "checkbox",
+            "id": "hide-4",
+            "label": "Hide Subheading 4",
+            "default": false
+          },
+          {
             "type": "text",
             "id": "subheading-4",
-            "label": "Subheading 4",
+            "label": "Subheading 4 title",
             "default": "Subheading title"
           },
           {
@@ -570,9 +610,19 @@
             "default": "<p>Use the text to answer questions</p>"
           },
           {
+            "type": "header",
+            "content": "Subheading 5"
+          },
+          {
+            "type": "checkbox",
+            "id": "hide-5",
+            "label": "Hide Subheading 5",
+            "default": false
+          },
+          {
             "type": "text",
             "id": "subheading-5",
-            "label": "Subheading 5",
+            "label": "Subheading 5 title",
             "default": "Subheading title"
           },
           {
@@ -582,9 +632,19 @@
             "default": "<p>Use the text to answer questions</p>"
           },
           {
+            "type": "header",
+            "content": "Subheading 6"
+          },
+          {
+            "type": "checkbox",
+            "id": "hide-6",
+            "label": "Hide Subheading 6",
+            "default": false
+          },
+          {
             "type": "text",
             "id": "subheading-6",
-            "label": "Subheading 6",
+            "label": "Subheading 6 title",
             "default": "Subheading title"
           },
           {
@@ -594,9 +654,19 @@
             "default": "<p>Use the text to answer questions</p>"
           },
           {
+            "type": "header",
+            "content": "Subheading 7"
+          },
+          {
+            "type": "checkbox",
+            "id": "hide-7",
+            "label": "Hide Subheading 7",
+            "default": false
+          },
+          {
             "type": "text",
             "id": "subheading-7",
-            "label": "Subheading 7",
+            "label": "Subheading 7 title",
             "default": "Subheading title"
           },
           {
@@ -606,9 +676,19 @@
             "default": "<p>Use the text to answer questions</p>"
           },
           {
+            "type": "header",
+            "content": "Subheading 8"
+          },
+          {
+            "type": "checkbox",
+            "id": "hide-8",
+            "label": "Hide Subheading 8",
+            "default": false
+          },
+          {
             "type": "text",
             "id": "subheading-8",
-            "label": "Subheading 8",
+            "label": "Subheading 8m title",
             "default": "Subheading title"
           },
           {
@@ -618,9 +698,19 @@
             "default": "<p>Use the text to answer questions</p>"
           },
           {
+            "type": "header",
+            "content": "Subheading 9"
+          },
+          {
+            "type": "checkbox",
+            "id": "hide-9",
+            "label": "Hide Subheading 9",
+            "default": false
+          },
+          {
             "type": "text",
             "id": "subheading-9",
-            "label": "Subheading 9",
+            "label": "Subheading 9 title",
             "default": "Subheading title"
           },
           {
@@ -628,11 +718,21 @@
             "id": "text-9",
             "label": "Text Response to Subheading 9",
             "default": "<p>Use the text to answer questions</p>"
-          }, 
+          },
+          {
+            "type": "header",
+            "content": "Subheading 10"
+          },
+          {
+            "type": "checkbox",
+            "id": "hide-10",
+            "label": "Hide Subheading 10",
+            "default": false
+          },
           {
             "type": "text",
             "id": "subheading-10",
-            "label": "Subheading 10",
+            "label": "Subheading 10 title",
             "default": "Subheading title"
           },
           {
@@ -642,9 +742,19 @@
             "default": "<p>Use the text to answer questions</p>"
           },
           {
+            "type": "header",
+            "content": "Subheading 11"
+          },
+          {
+            "type": "checkbox",
+            "id": "hide-11",
+            "label": "Hide Subheading 11",
+            "default": false
+          },
+          {
             "type": "text",
             "id": "subheading-11",
-            "label": "Subheading 11",
+            "label": "Subheading 11 title",
             "default": "Subheading title"
           },
           {
@@ -654,9 +764,19 @@
             "default": "<p>Use the text to answer questions</p>"
           },
           {
+            "type": "header",
+            "content": "Subheading 12"
+          },
+          {
+            "type": "checkbox",
+            "id": "hide-12",
+            "label": "Hide Subheading 12",
+            "default": false
+          },
+          {
             "type": "text",
             "id": "subheading-12",
-            "label": "Subheading 12",
+            "label": "Subheading 12 title",
             "default": "Subheading title"
           },
           {
@@ -664,10 +784,21 @@
             "id": "text-12",
             "label": "Text Response to Subheading 12",
             "default": "<p>Use the text to answer questions</p>"
-          },          {
+          },
+          {
+            "type": "header",
+            "content": "Subheading 13"
+          },
+          {
+            "type": "checkbox",
+            "id": "hide-13",
+            "label": "Hide Subheading 13",
+            "default": false
+          },
+          {
             "type": "text",
             "id": "subheading-13",
-            "label": "Subheading 13",
+            "label": "Subheading 13 title",
             "default": "Subheading title"
           },
           {
@@ -677,9 +808,19 @@
             "default": "<p>Use the text to answer questions</p>"
           },
           {
+            "type": "header",
+            "content": "Subheading 14"
+          },
+          {
+            "type": "checkbox",
+            "id": "hide-14",
+            "label": "Hide Subheading 14",
+            "default": false
+          },
+          {
             "type": "text",
             "id": "subheading-14",
-            "label": "Subheading 14",
+            "label": "Subheading 14 title",
             "default": "Subheading title"
           },
           {
@@ -687,11 +828,21 @@
             "id": "text-14",
             "label": "Text Response to Subheading 14",
             "default": "<p>Use the text to answer questions</p>"
-          },  
+          },
+          {
+            "type": "header",
+            "content": "Subheading 15"
+          },
+          {
+            "type": "checkbox",
+            "id": "hide-15",
+            "label": "Hide Subheading 15",
+            "default": false
+          },
           {
             "type": "text",
             "id": "subheading-15",
-            "label": "Subheading 15",
+            "label": "Subheading 15 title",
             "default": "Subheading title"
           },
           {
@@ -699,11 +850,21 @@
             "id": "text-15",
             "label": "Text Response to Subheading 15",
             "default": "<p>Use the text to answer questions</p>"
-          },          
+          },
+          {
+            "type": "header",
+            "content": "Subheading 16"
+          },
+          {
+            "type": "checkbox",
+            "id": "hide-16",
+            "label": "Hide Subheading 16",
+            "default": false
+          },
           {
             "type": "text",
             "id": "subheading-16",
-            "label": "Subheading 16",
+            "label": "Subheading 16 title",
             "default": "Subheading title"
           },
           {
@@ -711,11 +872,21 @@
             "id": "text-16",
             "label": "Text Response to Subheading 16",
             "default": "<p>Use the text to answer questions</p>"
-          },          
+          },
+          {
+            "type": "header",
+            "content": "Subheading 17"
+          },
+          {
+            "type": "checkbox",
+            "id": "hide-17",
+            "label": "Hide Subheading 17",
+            "default": false
+          },
           {
             "type": "text",
             "id": "subheading-17",
-            "label": "Subheading 17",
+            "label": "Subheading 17 title",
             "default": "Subheading title"
           },
           {
@@ -723,11 +894,21 @@
             "id": "text-17",
             "label": "Text Response to Subheading 17",
             "default": "<p>Use the text to answer questions</p>"
-          },          
+          },
+          {
+            "type": "header",
+            "content": "Subheading 18"
+          },
+          {
+            "type": "checkbox",
+            "id": "hide-18",
+            "label": "Hide Subheading 18",
+            "default": false
+          },
           {
             "type": "text",
             "id": "subheading-18",
-            "label": "Subheading 18",
+            "label": "Subheading 18 title",
             "default": "Subheading title"
           },
           {
@@ -735,11 +916,21 @@
             "id": "text-18",
             "label": "Text Response to Subheading 18",
             "default": "<p>Use the text to answer questions</p>"
-          },          
+          },
+          {
+            "type": "header",
+            "content": "Subheading 19"
+          },
+          {
+            "type": "checkbox",
+            "id": "hide-19",
+            "label": "Hide Subheading 19",
+            "default": false
+          },
           {
             "type": "text",
             "id": "subheading-19",
-            "label": "Subheading 19",
+            "label": "Subheading 19 title",
             "default": "Subheading title"
           },
           {
@@ -747,11 +938,21 @@
             "id": "text-19",
             "label": "Text Response to Subheading 19",
             "default": "<p>Use the text to answer questions</p>"
-          },          
+          },
+          {
+            "type": "header",
+            "content": "Subheading 20"
+          },
+          {
+            "type": "checkbox",
+            "id": "hide-20",
+            "label": "Hide Subheading 20",
+            "default": false
+          },
           {
             "type": "text",
             "id": "subheading-20",
-            "label": "Subheading 20",
+            "label": "Subheading 20 title",
             "default": "Subheading title"
           },
           {
@@ -759,11 +960,21 @@
             "id": "text-20",
             "label": "Text Response to Subheading 20",
             "default": "<p>Use the text to answer questions</p>"
-          }, 
+          },
+          {
+            "type": "header",
+            "content": "Subheading 21"
+          },
+          {
+            "type": "checkbox",
+            "id": "hide-21",
+            "label": "Hide Subheading 21",
+            "default": false
+          },
           {
             "type": "text",
             "id": "subheading-21",
-            "label": "Subheading 21",
+            "label": "Subheading 21 title",
             "default": "Subheading title"
           },
           {
