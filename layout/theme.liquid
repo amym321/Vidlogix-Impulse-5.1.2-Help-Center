@@ -106,19 +106,6 @@
    {% render 'boost-pfs-style' %}
  <!--end-boost-pfs-filter-css-->
 
-  {% comment %} papypal links for pdp popup msg.  - am {% endcomment %}
-<script
-  src="https://www.paypal.com/sdk/js?client-id=Af_uHcFa_Uuc2oWIlg4TrUBfgoDxVpk-W9BvMceocsVpndccAAdB0Opq0P3-SHwkHuY5Y0qb8uT1mmjE&components=messages"
-  data-namespace="PayPalSDK">
-</script>
-<script
-  src="https://www.paypal.com/sdk/js?client-id=ARMbQq62cWs1hujFXVNuJ_X_54wyMPOM_7osD_-35i049eMkywcw0989_wHr_ATa0yZ7hiQw60dpcSGW&components=messages"
-  data-namespace="PayPalSDK">
-</script>
-<script
-  src="https://www.paypal.com/sdk/js?client-id=AUTQyv-Fd2NbgmsX3w5sSfgnw2p6pv7tJkXLNaXeV-OVwp-qwLDz1lrb4-2IHLBPfqs9f11XgRChbln6&components=messages"
-  data-namespace="PayPalSDK">
-</script>
 </head>
 
 <body class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}{% if request.path == '/challenge' %} template-challange{% endif %}" data-center-text="{{ settings.type_body_align_text }}" data-button_style="{{ settings.button_style }}" data-type_header_capitalize="{{ settings.type_header_capitalize }}" data-type_headers_align_text="{{ settings.type_headers_align_text }}" data-type_product_capitalize="{{ settings.type_product_capitalize }}" data-swatch_style="{{ settings.swatch_style }}" {% if settings.disable_animations %}data-disable-animations="true"{% endif %}>

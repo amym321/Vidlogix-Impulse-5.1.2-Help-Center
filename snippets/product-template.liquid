@@ -292,17 +292,6 @@
 
                         <span data-unit-price>{{ current_variant.unit_price | money }}</span>/{{ unit_price_base_unit }}
                       </div>
-
-                      {% comment %} Paypal messaging - am {% endcomment %}
-                      <div class="paypal-link" 
-                        data-pp-message
-                        data-pp-style-layout="text"
-                        data-pp-style-logo-type="alternative"
-                        data-pp-style-text-color="black"
-                        data-pp-amount="$50.00"> {% comment %} placeholder value {% endcomment %}
-                      </div>
-
-
                     </div>
 
                   {%- when 'quantity_selector' -%}
