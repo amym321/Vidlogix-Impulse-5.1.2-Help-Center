@@ -2,6 +2,10 @@
 
 {%- form 'product', product, id: form_id, class: 'product-single__form ' -%}
 
+  {% comment %} Shop Pay message - am  {% endcomment %}
+  <div class="shopify-payment-terms product__policies">{{ form | payment_terms }}</div>
+
+
   {% comment %} <div class="shopify-payment-terms product__policies" >
     {{ form | payment_terms }}
   </div> {% endcomment %}
@@ -68,8 +72,6 @@
     </div>
   {%- endif -%}
 
-  {% comment %} removed Shop Pay language & popup {% endcomment %}
-  <!-- <div class="shopify-payment-terms product__policies">{{ form | payment_terms }}</div> -->
 
   <select name="id" data-product-select class="product-single__variants no-js">
     {%- for variant in product.variants -%}
