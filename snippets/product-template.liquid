@@ -294,6 +294,12 @@
                       </div>
                     </div>
 
+                    {% comment %} Shop Pay message. Added another form so message displays - am  {% endcomment %}
+                    {%- form 'product', product, id: form_id, class: 'product-single__form ' -%}
+                      <div class="shopify-payment-terms product__policies">{{ form | payment_terms }}</div>
+                    {%- endform -%}
+
+
                   {%- when 'quantity_selector' -%}
                     <div class="product__quantity-cart">
                       <div class="product-block product__quantity--dropdown" {{ block.shopify_attributes }}>

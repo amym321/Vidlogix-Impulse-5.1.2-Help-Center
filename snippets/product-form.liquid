@@ -2,14 +2,6 @@
 
 {%- form 'product', product, id: form_id, class: 'product-single__form ' -%}
 
-  {% comment %} Shop Pay message - am  {% endcomment %}
-  <div class="shopify-payment-terms product__policies">{{ form | payment_terms }}</div>
-
-
-  {% comment %} <div class="shopify-payment-terms product__policies" >
-    {{ form | payment_terms }}
-  </div> {% endcomment %}
-
   {%- liquid
     assign enable_dynamic_buttons = false
     if show_dynamic_checkout and template != 'product.preorder'
