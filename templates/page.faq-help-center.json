@@ -130,7 +130,7 @@
             "hide-4": false,
             "subheading-4": "Signature Required",
             "text-4": "<p><strong>Orders over $500.<\/strong> Since most Vidlogix shipments contain valuable items, we require our carriers to obtain a signature when they deliver a package. The carrier may make subsequent delivery attempts before returning the shipment to Vidlogix. We are unable to change the shipping address once your order has been placed.<\/p><p><strong>UPS My Choice.<\/strong> You may not change the delivery date or address. We do this to protect the receiver against package fraud.<\/p><p><strong>Missed delivery?<\/strong> You can request that your driver leaves your package on the next delivery attempt. Sign the UPS Delivery Notice in the space provided and place it back where the driver originally left the notice.<\/p><p><strong>No delivery notice?<\/strong> The carrier may make subsequent delivery attempts before returning the shipment to Vidlogix. <\/p><p><strong>Returned to sender?<\/strong> Sorry we missed you. We'll issue a full and prompt refund when the shipment returns to Vidlogix.<\/p>",
-            "hide-5": false,
+            "hide-5": true,
             "subheading-5": "Shipping Insurance",
             "text-5": "<p><strong>By deselecting UPS Capital<\/strong>®<strong> Insurance, our options will be limited in the event of damaged or lost packages.<\/strong><\/p><p>Vidlogix's liability for damage or loss to each package is limited to a value of $100. Unless a greater value is purchased, the receiver agrees that the released value of each package is no greater than $100, and that Vidlogix shall not be liable for more than $100 for each package. Shipping insurance is nonrefundable.<\/p>",
             "hide-6": false,
