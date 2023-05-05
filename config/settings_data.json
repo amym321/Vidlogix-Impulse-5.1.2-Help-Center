@@ -63,7 +63,7 @@
     "product_grid_image_size": "square",
     "product_hover_image": false,
     "backstock_intro": "Backorder — Dispatched",
-    "backstock_tooltip": "The estimated delivery date is based on your purchase date, the recipient's location (actual or inferred), the seller's processing time and location, and the shipping carrier.\n\nOther factors—such as shipping carrier delays or placing an order on weekend\/holiday—may push the arrival of your item beyond this date.",
+    "backstock_tooltip": "The Restock Date is when we reasonably expect to have the product in stock based on anticipated demand, communications from the manufacturer, and other factors. These dates are good faith estimates and subject to delays or changes. You may cancel an order at any time before shipment.",
     "condition_new_tooltip": "New: The brand-new, unused, unopened, undamaged item is in its original packaging. Packaging is the same as what is found in a retail store.",
     "backstock_icon": "shopify:\/\/shop_images\/tooltip-icon.png",
     "enable_product_reviews": true,
