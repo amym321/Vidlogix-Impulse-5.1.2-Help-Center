@@ -152,7 +152,7 @@
           "type": "liquid",
           "settings": {
             "code": "<video autoplay muted>\n  <source src=\"https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/619f2b86eeb0429dbc291bbf729624bb.mp4\" type=\"video\/mp4\">\n<\/video>",
-            "width": "50%",
+            "width": "25%",
             "alignment": "center"
           }
         }
@@ -162,7 +162,7 @@
       ],
       "settings": {
         "full_width": false,
-        "space_around": true
+        "space_around": false
       }
     },
     "1640124077a8d2421e": {
