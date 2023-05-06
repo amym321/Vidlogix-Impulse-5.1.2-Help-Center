@@ -144,26 +144,6 @@
         "space_around": true
       }
     },
-    "f80561c1-b317-43cf-8a9c-7857c5e2c822": {
-      "type": "advanced-content",
-      "blocks": {
-        "template--14886801014851__f80561c1-b317-43cf-8a9c-7857c5e2c822-1683332285c0385428-1": {
-          "type": "liquid",
-          "settings": {
-            "code": "<div style=\"padding:66.93% 0 0 0;position:relative;\"><iframe src=\"https:\/\/player.vimeo.com\/video\/824258365?h=bd3d19d418&autoplay=1&loop=1&color=F6C03F&title=0&byline=0&portrait=0\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen><\/iframe><\/div><script src=\"https:\/\/player.vimeo.com\/api\/player.js\"><\/script>\n<p><a href=\"https:\/\/vimeo.com\/824258365\">vidlogix-offsite-reel-compressed<\/a> from <a href=\"https:\/\/vimeo.com\/vidlogix\">vidlogix<\/a> on <a href=\"https:\/\/vimeo.com\">Vimeo<\/a>.<\/p>",
-            "width": "100%",
-            "alignment": "center"
-          }
-        }
-      },
-      "block_order": [
-        "template--14886801014851__f80561c1-b317-43cf-8a9c-7857c5e2c822-1683332285c0385428-1"
-      ],
-      "settings": {
-        "full_width": false,
-        "space_around": true
-      }
-    },
     "1640124077a8d2421e": {
       "type": "rich-text",
       "disabled": true,
@@ -215,7 +195,6 @@
     "rich-text",
     "1640205186fd41e98e",
     "c8141eff-24ea-4f6f-8c31-8122635c73b5",
-    "f80561c1-b317-43cf-8a9c-7857c5e2c822",
     "1640124077a8d2421e",
     "16401241093b41c04d"
   ]
