@@ -134,10 +134,19 @@
             "width": "100%",
             "alignment": "center"
           }
+        },
+        "284faa28-1fa8-49a8-8e3b-091b3007367a": {
+          "type": "liquid",
+          "settings": {
+            "code": "<video loop=\"loop\" playsinline=\"\" webkit-playsinline=\"\" muted=\"muted\" preload=\"auto\" data-v-3897b8b0><source src=\"<video loop=\"loop\" playsinline=\"\" webkit-playsinline=\"\" muted=\"muted\" preload=\"auto\" data-v-3897b8b0><source src=\"https:\/\/image.shopmoment.com\/general\/shotonmoment_reel_handles_2-1_190717_144754.mp4\" data-v-3897b8b0><\/video\" data-v-3897b8b0><\/video",
+            "width": "100%",
+            "alignment": "center"
+          }
         }
       },
       "block_order": [
-        "template--14683427110979__c8141eff-24ea-4f6f-8c31-8122635c73b5-1677379719e31dae8a-1"
+        "template--14683427110979__c8141eff-24ea-4f6f-8c31-8122635c73b5-1677379719e31dae8a-1",
+        "284faa28-1fa8-49a8-8e3b-091b3007367a"
       ],
       "settings": {
         "full_width": false,
