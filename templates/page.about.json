@@ -126,6 +126,7 @@
     },
     "c8141eff-24ea-4f6f-8c31-8122635c73b5": {
       "type": "advanced-content",
+      "disabled": true,
       "blocks": {
         "template--14683427110979__c8141eff-24ea-4f6f-8c31-8122635c73b5-1677379719e31dae8a-1": {
           "type": "liquid",
@@ -146,7 +147,6 @@
     },
     "14c7543c-8b51-4e35-a1cc-ca1b4310b49d": {
       "type": "featured-video",
-      "disabled": true,
       "settings": {
         "title": "",
         "video_url": "https:\/\/vimeo.com\/824258365?share=copy",
