@@ -126,7 +126,6 @@
     },
     "c8141eff-24ea-4f6f-8c31-8122635c73b5": {
       "type": "advanced-content",
-      "disabled": true,
       "blocks": {
         "template--14683427110979__c8141eff-24ea-4f6f-8c31-8122635c73b5-1677379719e31dae8a-1": {
           "type": "liquid",
@@ -164,14 +163,6 @@
       "settings": {
         "full_width": false,
         "space_around": true
-      }
-    },
-    "14c7543c-8b51-4e35-a1cc-ca1b4310b49d": {
-      "type": "featured-video",
-      "settings": {
-        "title": "",
-        "video_url": "https:\/\/vimeo.com\/824258365?share=copy",
-        "divider": false
       }
     },
     "1640124077a8d2421e": {
@@ -226,7 +217,6 @@
     "1640205186fd41e98e",
     "c8141eff-24ea-4f6f-8c31-8122635c73b5",
     "f80561c1-b317-43cf-8a9c-7857c5e2c822",
-    "14c7543c-8b51-4e35-a1cc-ca1b4310b49d",
     "1640124077a8d2421e",
     "16401241093b41c04d"
   ]
