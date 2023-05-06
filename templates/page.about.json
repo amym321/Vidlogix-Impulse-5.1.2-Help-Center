@@ -134,8 +134,20 @@
             "width": "100%",
             "alignment": "center"
           }
-        },
-        "99b9d49f-9d02-4a8b-8694-9c2203aadac3": {
+        }
+      },
+      "block_order": [
+        "template--14683427110979__c8141eff-24ea-4f6f-8c31-8122635c73b5-1677379719e31dae8a-1"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "138cb1ea-6c93-434b-83ca-79cee66c7b5f": {
+      "type": "advanced-content",
+      "blocks": {
+        "template--14886801014851__138cb1ea-6c93-434b-83ca-79cee66c7b5f-1683336949acec2cfc-1": {
           "type": "liquid",
           "settings": {
             "code": "<video autoplay muted>\n  <source src=\"https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/619f2b86eeb0429dbc291bbf729624bb.mp4\" type=\"video\/mp4\">\n<\/video>",
@@ -145,8 +157,7 @@
         }
       },
       "block_order": [
-        "template--14683427110979__c8141eff-24ea-4f6f-8c31-8122635c73b5-1677379719e31dae8a-1",
-        "99b9d49f-9d02-4a8b-8694-9c2203aadac3"
+        "template--14886801014851__138cb1ea-6c93-434b-83ca-79cee66c7b5f-1683336949acec2cfc-1"
       ],
       "settings": {
         "full_width": false,
@@ -204,6 +215,7 @@
     "rich-text",
     "1640205186fd41e98e",
     "c8141eff-24ea-4f6f-8c31-8122635c73b5",
+    "138cb1ea-6c93-434b-83ca-79cee66c7b5f",
     "1640124077a8d2421e",
     "16401241093b41c04d"
   ]
