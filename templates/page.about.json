@@ -129,7 +129,6 @@
       "blocks": {
         "template--14683427110979__c8141eff-24ea-4f6f-8c31-8122635c73b5-1677379719e31dae8a-1": {
           "type": "liquid",
-          "disabled": true,
           "settings": {
             "code": "<script src=\"https:\/\/apps.elfsight.com\/p\/platform.js\" defer><\/script>\n<div class=\"elfsight-app-cf291531-534b-4b2c-85ad-cad9f9b29205\"><\/div>",
             "width": "100%",
