@@ -137,6 +137,7 @@
         },
         "284faa28-1fa8-49a8-8e3b-091b3007367a": {
           "type": "liquid",
+          "disabled": true,
           "settings": {
             "code": "<video loop=\"loop\" playsinline=\"\" webkit-playsinline=\"\" muted=\"muted\" preload=\"auto\" data-v-3897b8b0><source src=\"https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/619f2b86eeb0429dbc291bbf729624bb.mp4\" data-v-3897b8b0><\/video>",
             "width": "50%",
