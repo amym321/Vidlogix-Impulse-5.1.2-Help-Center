@@ -126,6 +126,7 @@
     },
     "c8141eff-24ea-4f6f-8c31-8122635c73b5": {
       "type": "advanced-content",
+      "disabled": true,
       "blocks": {
         "template--14683427110979__c8141eff-24ea-4f6f-8c31-8122635c73b5-1677379719e31dae8a-1": {
           "type": "liquid",
@@ -152,7 +153,7 @@
           "settings": {
             "code": "<div style=\"padding:66.93% 0 0 0;position:relative;\"><iframe src=\"https:\/\/player.vimeo.com\/video\/824258365?h=bd3d19d418&autoplay=1&loop=1&color=F6C03F&title=0&byline=0&portrait=0\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen><\/iframe><\/div><script src=\"https:\/\/player.vimeo.com\/api\/player.js\"><\/script>",
             "width": "100%",
-            "alignment": "top-middle"
+            "alignment": "center"
           }
         }
       },
