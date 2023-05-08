@@ -221,7 +221,7 @@
         "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/619f2b86eeb0429dbc291bbf729624bb.mp4",
         "overlay_opacity": 0,
         "section_height": "100vh",
-        "mobile_height": "auto"
+        "mobile_height": "300px"
       }
     }
   },
