@@ -105,7 +105,7 @@
     "7882cd96-7f20-441c-861a-d3b396675b26": {
       "type": "hero-video",
       "custom_css": [
-        "@media (min-width: 769px) {.index-section--hero {height: 100vh; } .hero__media video {object-fit: scale-down !important; }}"
+        "@media (min-width: 769px) {.index-section--hero {height: 100vh; } .hero__media video {object-fit: scale-down !important; } .hero__text-wrap {display:none; }}"
       ],
       "settings": {
         "title": "",
@@ -138,7 +138,7 @@
       ],
       "custom_css": [
         "@media (min-width: 769px) {.index-section {margin: 25px 0; }}",
-        "@media (max-width: 768px) {.index-section {display:none; }}"
+        "@media (max-width: 768px) {.index-section {display: none; }}"
       ],
       "settings": {
         "full_width": false,
