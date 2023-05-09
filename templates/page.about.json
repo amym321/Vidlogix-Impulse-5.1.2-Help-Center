@@ -117,112 +117,6 @@
         "section_height": "100vh",
         "mobile_height": "300px"
       }
-    },
-    "1640205186fd41e98e": {
-      "type": "grid-of-images",
-      "disabled": true,
-      "settings": {
-        "image_1": "shopify:\/\/shop_images\/CleanShot_2023-02-20_at_21.50.10_2x_2ed5c8f2-d798-4690-b063-9c5b30cf7b7a.png",
-        "image_1_link": "",
-        "image_2": "shopify:\/\/shop_images\/CleanShot_2023-02-20_at_21.51.11_2x_61f123eb-631e-4dae-a364-2e1ce79eb7de.png",
-        "image_2_link": "",
-        "image_3": "shopify:\/\/shop_images\/CleanShot_2023-02-20_at_21.51.54_2x_0e073a01-0001-4f51-a27d-93ada0c83250.png",
-        "image_3_link": "",
-        "image_4": "shopify:\/\/shop_images\/CleanShot_2023-02-20_at_21.49.17_2x_c42c49cd-03fa-446f-b515-3c946bfb587a.png",
-        "image_4_link": "",
-        "image_5": "shopify:\/\/shop_images\/CleanShot_2023-02-20_at_21.52.32_2x_a455d4e5-d662-40fc-bb3f-c63359fd1113.png",
-        "image_5_link": "",
-        "image_6": "shopify:\/\/shop_images\/Team_6.jpg",
-        "image_6_link": "",
-        "image_7": "shopify:\/\/shop_images\/Team_7.jpg",
-        "image_7_link": "",
-        "image_8": "shopify:\/\/shop_images\/CleanShot_2023-02-20_at_21.47.50_2x_4e1a7309-767d-4653-a448-3a5b04766426.png",
-        "image_8_link": ""
-      }
-    },
-    "c8141eff-24ea-4f6f-8c31-8122635c73b5": {
-      "type": "advanced-content",
-      "disabled": true,
-      "blocks": {
-        "template--14683427110979__c8141eff-24ea-4f6f-8c31-8122635c73b5-1677379719e31dae8a-1": {
-          "type": "liquid",
-          "settings": {
-            "code": "<script src=\"https:\/\/apps.elfsight.com\/p\/platform.js\" defer><\/script>\n<div class=\"elfsight-app-cf291531-534b-4b2c-85ad-cad9f9b29205\"><\/div>",
-            "width": "100%",
-            "alignment": "center"
-          }
-        }
-      },
-      "block_order": [
-        "template--14683427110979__c8141eff-24ea-4f6f-8c31-8122635c73b5-1677379719e31dae8a-1"
-      ],
-      "settings": {
-        "full_width": false,
-        "space_around": true
-      }
-    },
-    "138cb1ea-6c93-434b-83ca-79cee66c7b5f": {
-      "type": "advanced-content",
-      "disabled": true,
-      "blocks": {
-        "template--14886801014851__138cb1ea-6c93-434b-83ca-79cee66c7b5f-1683336949acec2cfc-1": {
-          "type": "liquid",
-          "settings": {
-            "code": "<video autoplay muted>\n  <source src=\"https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/619f2b86eeb0429dbc291bbf729624bb.mp4\" type=\"video\/mp4\">\n<\/video>",
-            "width": "25%",
-            "alignment": "center"
-          }
-        }
-      },
-      "block_order": [
-        "template--14886801014851__138cb1ea-6c93-434b-83ca-79cee66c7b5f-1683336949acec2cfc-1"
-      ],
-      "settings": {
-        "full_width": false,
-        "space_around": false
-      }
-    },
-    "1640124077a8d2421e": {
-      "type": "rich-text",
-      "disabled": true,
-      "blocks": {
-        "16401240777f6b1423-0": {
-          "type": "heading",
-          "settings": {
-            "title": "GET IN TOUCH"
-          }
-        }
-      },
-      "block_order": [
-        "16401240777f6b1423-0"
-      ],
-      "settings": {
-        "align_text": "center",
-        "narrow_column": true,
-        "divider": false
-      }
-    },
-    "16401241093b41c04d": {
-      "type": "rich-text",
-      "disabled": true,
-      "blocks": {
-        "1640124109868776b7-1": {
-          "type": "text",
-          "settings": {
-            "enlarge_text": false,
-            "text": "<p>Vidlogix HQ<br\/>160 Varick St.<br\/>NY, NY 10013<br\/><a href=\"tel:16313725004\" target=\"_blank\" title=\"tel:16313725004\">631-372-5004<\/a><\/p><p>For order inquires, please contact us at:<br\/><a href=\"mailto:hello@vidlogix.com\" title=\"mailto:hello@vidlogix.com\"><strong>hello@vidlogix.com<\/strong><\/a><\/p><p>For press inquiries, please contact us at:<br\/><a href=\"mailto:press@vidlogix.com\" title=\"mailto:press@vidlogix.com\"><strong>press@vidlogix.com<\/strong><\/a><\/p><p>For legal inquiries, please contact us at:<br\/><a href=\"mailto:legal@vidlogix.com\" title=\"mailto:legal@vidlogix.com\"><strong>legal@vidlogix.com<\/strong><\/a><\/p>",
-            "beacon_popup": false
-          }
-        }
-      },
-      "block_order": [
-        "1640124109868776b7-1"
-      ],
-      "settings": {
-        "align_text": "left",
-        "narrow_column": false,
-        "divider": false
-      }
     }
   },
   "order": [
@@ -231,11 +125,6 @@
     "slideshow",
     "1640050141300482f2",
     "rich-text",
-    "7882cd96-7f20-441c-861a-d3b396675b26",
-    "1640205186fd41e98e",
-    "c8141eff-24ea-4f6f-8c31-8122635c73b5",
-    "138cb1ea-6c93-434b-83ca-79cee66c7b5f",
-    "1640124077a8d2421e",
-    "16401241093b41c04d"
+    "7882cd96-7f20-441c-861a-d3b396675b26"
   ]
 }
