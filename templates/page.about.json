@@ -136,6 +136,9 @@
       "block_order": [
         "template--14886801014851__63d66f01-1fa7-4463-8ff1-6075569ca9e7-16836667670bfdad39-1"
       ],
+      "custom_css": [
+        "@media only screen and (min-width: 769px) {.index-section {margin: 25px 0;}}"
+      ],
       "settings": {
         "full_width": false,
         "space_around": true
