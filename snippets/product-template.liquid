@@ -294,10 +294,6 @@
                       </div>
                     </div>
 
-                    {% comment %} Shop Pay message. Added another form so message displays - am  {% endcomment %}
-                    {%- form 'product', product, id: form_id, class: 'product-single__form ' -%}
-                      <div class="shopify-payment-terms product__policies">{{ form | payment_terms }}</div>
-                    {%- endform -%}
 
 
                   {%- when 'quantity_selector' -%}
@@ -538,26 +534,26 @@
                       {% if product.metafields.tabbed.tab_column_three[forloop.index0] != blank %}
                         {% assign column_count = 'col-3' %}
                       {% elsif product.metafields.tabbed.tab_column_two[forloop.index0] !=blank %}
-                    	  {% assign column_count = 'col-2' %}
+                        {% assign column_count = 'col-2' %}
                       {% else %}
                         {% assign column_count = 'col-1' %}
                       {% endif %}
                       <div class="content rte tab tab-{{ forloop.index0 | plus: 1 }} {{ column_count }}" id="{{ product.metafields.tabbed.tab_title[forloop.index0] | handleize }}">
                           {% if product.metafields.tabbed.tab_column_one[forloop.index0] !=blank %}
-                        	  <div class="column">
+                            <div class="column">
                               {{ product.metafields.tabbed.tab_column_one[forloop.index0] }}
                             </div>
-                        	{% endif %}
+                          {% endif %}
                           {% if product.metafields.tabbed.tab_column_two[forloop.index0] !=blank %}
-                        	  <div class="column">
+                            <div class="column">
                               {{ product.metafields.tabbed.tab_column_two[forloop.index0] }}
                             </div>
-                        	{% endif %}
+                          {% endif %}
                           {% if product.metafields.tabbed.tab_column_three[forloop.index0] != blank %}
-                        	  <div class="column">
+                            <div class="column">
                               {{ product.metafields.tabbed.tab_column_three[forloop.index0] }}
                             </div>
-                        	{% endif %}
+                          {% endif %}
                       </div>
                   {% endfor %}
                 {% else %}
