@@ -48,6 +48,32 @@
         "autoplay_speed": 5
       }
     },
+    "1640050141300482f2": {
+      "type": "text-and-image",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/who_img_948da193-f703-4390-95ec-b8bb3d505d44.png",
+        "image_width": 700,
+        "full_width": false,
+        "subtitle": "",
+        "title": "Our Founders",
+        "center_title": true,
+        "text_below": true,
+        "text": "<p>Vidlogix has been loyally serving customers <strong>since 1974<\/strong>. We have experts ready to give courteous service with a phone call or a personal visit. We make the wonders of technology available through our complete lines of Smart Home, Security, Audio\/Visual, & Networking devices, to which we add a wonderful, personal experience.<\/p><p>– Andy and Rich, Co-Founders<\/p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "center",
+        "button_chat": false,
+        "button_popup": false,
+        "disclaimer": "",
+        "background_color": "#f2f2f2",
+        "text_color": "",
+        "layout": "bottom",
+        "title_bottom_margin": 95,
+        "image_bottom_margin": 95,
+        "divider": false
+      }
+    },
     "rich-text": {
       "type": "rich-text",
       "blocks": {
@@ -95,32 +121,6 @@
         "mobile_height": "300px"
       }
     },
-    "1640050141300482f2": {
-      "type": "text-and-image",
-      "settings": {
-        "image": "shopify:\/\/shop_images\/who_img_948da193-f703-4390-95ec-b8bb3d505d44.png",
-        "image_width": 700,
-        "full_width": false,
-        "subtitle": "",
-        "title": "Our Founders",
-        "center_title": true,
-        "text_below": true,
-        "text": "<p>Vidlogix has been loyally serving customers <strong>since 1974<\/strong>. We have experts ready to give courteous service with a phone call or a personal visit. We make the wonders of technology available through our complete lines of Smart Home, Security, Audio\/Visual, & Networking devices, to which we add a wonderful, personal experience.<\/p><p>– Andy and Rich, Co-Founders<\/p>",
-        "button_label": "",
-        "button_link": "",
-        "button_style": "primary",
-        "align_text": "center",
-        "button_chat": false,
-        "button_popup": false,
-        "disclaimer": "",
-        "background_color": "#f2f2f2",
-        "text_color": "",
-        "layout": "bottom",
-        "title_bottom_margin": 95,
-        "image_bottom_margin": 95,
-        "divider": false
-      }
-    },
     "63d66f01-1fa7-4463-8ff1-6075569ca9e7": {
       "type": "advanced-content",
       "disabled": true,
@@ -151,9 +151,9 @@
     "main",
     "164020623464833959",
     "slideshow",
+    "1640050141300482f2",
     "rich-text",
     "7882cd96-7f20-441c-861a-d3b396675b26",
-    "1640050141300482f2",
     "63d66f01-1fa7-4463-8ff1-6075569ca9e7"
   ]
 }
