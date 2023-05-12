@@ -48,7 +48,8 @@
 <div
   data-section-id="{{ section.id }}"
   data-section-type="video-section"
-  class="video-parent-section hero hero--{{ section.id }} hero--{{ section.settings.section_height }} hero--mobile--{{ section.settings.mobile_height }}"
+  class="{% if template.suffix contains "about" %} about-video {% endif %}
+    video-parent-section hero hero--{{ section.id }} hero--{{ section.settings.section_height }} hero--mobile--{{ section.settings.mobile_height }}"
   data-mobile-natural="false"
   data-aos="hero__animation">
 
