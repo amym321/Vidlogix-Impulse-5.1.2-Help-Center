@@ -13250,25 +13250,30 @@ button#dummy-chat-button.chat-toggle {
 
 @media (min-width: 769px) {
   .about-video  {
-    height: 700px;
-    width: 750px;
+    max-width: 875px;
+    margin: 0 40px 20px;
+    height: 60vh;
   }
 }
-@media (min-width: 821px) {
+@media (min-width: 955px) { /* 875 + 40 + 40 = 955 */
   .about-video {
-    width: 775px;
+    width: 875px;
+    /* height: 800px; */
+    margin: auto;
   }
 }
 
 @media (max-width: 768px) {
   .about-video {
-    height: 50vh !important;
-  }
-  .about-video  {
+    height: 60vh !important;
     margin: 0 37px 20px;
   }
 }
-
+@media (max-width: 660px) {
+  .about-video {
+    height: 50vh !important;
+  }
+}
 @media (max-width: 539px) {
   .about-video {
     height: 37vh !important;
@@ -13283,4 +13288,12 @@ button#dummy-chat-button.chat-toggle {
   .about-video  {
     height: 24vh !important;
   }
+}
+
+
+/* About page elements */
+.custom-acc-template .feature-column .feature-row__item,
+.custom-acc-template .feature-column .feature-row__item--holder,
+.custom-acc-template .page-width--narrow {
+  max-width: 875px!important;
 }
