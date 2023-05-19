@@ -191,7 +191,7 @@
               "show_email": true,
               "email_text": "hello@vidlogix.com",
               "show_phone": false,
-              "phone_text": "631-372-5004 (text)",
+              "phone_text": "631-372-5004",
               "show_phone_text": true,
               "phone_text_text": "631-372-5004",
               "include_address": false,
