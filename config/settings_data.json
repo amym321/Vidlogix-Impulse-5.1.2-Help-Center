@@ -194,7 +194,7 @@
               "phone_text": "631-372-5004",
               "show_phone_text": true,
               "phone_text_text": "631-372-5004",
-              "include_address": true,
+              "include_address": false,
               "business_address": "160 Varick St • NY, NY 10013",
               "container_width": 40
             }
