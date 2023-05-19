@@ -120,21 +120,10 @@
           },
           "1524770292306": {
             "type": "announcement",
-            "disabled": true,
             "settings": {
-              "text": "Free lifetime technical support",
+              "text": "Call\/Text Us (631) 372-5004",
               "link_text": "",
               "link": "shopify:\/\/pages\/tech-support",
-              "bar_popup": false
-            }
-          },
-          "1524770296206": {
-            "type": "announcement",
-            "disabled": true,
-            "settings": {
-              "text": "Free 3-Yr Warranty with Shop Pay",
-              "link_text": "",
-              "link": "shopify:\/\/pages\/extended-warranty",
               "bar_popup": false
             }
           },
@@ -151,7 +140,6 @@
         "block_order": [
           "1524770014057",
           "1524770292306",
-          "1524770296206",
           "f1e24d76-2f27-4282-a406-a30a0e3d8935"
         ],
         "settings": {
